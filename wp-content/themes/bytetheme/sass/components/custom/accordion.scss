@@ -1,0 +1,47 @@
+.accordion_block {
+	@include space(true);
+}
+
+.accordion_block_inner {
+	@include row;
+}
+
+.accordion_items {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.accordion {}
+
+.accordion_trigger {
+	width: 100%;
+
+	appearance: none;
+	-webkit-appearance: none;
+	align-items: center;
+	border: 0;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0;
+	text-align: left;
+}
+
+.accordion_title {
+	@include h4;
+
+	margin-right: 10px;
+}
+
+.accordion_icon {}
+
+.accordion_content {
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
+
+.accordion_caption {}

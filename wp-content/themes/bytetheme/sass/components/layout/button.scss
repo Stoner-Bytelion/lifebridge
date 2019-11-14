@@ -1,0 +1,11 @@
+.wp-block-button {
+	@include row;
+	@include space;
+}
+
+.wp-block-button__link {
+	@include button;
+
+	display: inline-block;
+	vertical-align: top;
+}

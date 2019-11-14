@@ -1,0 +1,32 @@
+.table {
+	@include row;
+	@include space;
+}
+
+.wp-block-table {
+	width: 100%;
+
+	border-collapse: collapse;
+	border: 1px solid #eee;
+
+	tr {
+
+		&:first-child td {
+			background: #000;
+			color: #fff;
+			font-weight: 700;
+			padding: 10px 20px;
+			text-align: left;
+		}
+
+		&:not(:first-child) td {
+			border: 1px solid #eee;
+			padding: 10px 20px;
+			vertical-align: top;
+		}
+
+		&:nth-child(even) {
+			background: #fafafa;
+		}
+	}
+}

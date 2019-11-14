@@ -1,0 +1,19 @@
+div.wpcf7 {
+	@include row;
+	@include space;
+}
+
+.wpcf7-form {
+
+	label {
+		display: block;
+	}
+}
+
+.wpcf7-form-control-wrap {
+	display: block;
+}
+
+span.wpcf7-list-item {
+	margin: 0 20px 0 0;
+}

@@ -1,0 +1,13 @@
+.wp-block-embed {
+	@include row;
+	@include space;
+}
+
+.wp-block-embed__wrapper {
+
+	figcaption {
+		@include caption_text;
+
+		margin-top: 10px;
+	}
+}

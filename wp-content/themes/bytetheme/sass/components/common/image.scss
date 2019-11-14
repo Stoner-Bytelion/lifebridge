@@ -1,0 +1,49 @@
+.image {
+    @include row;
+    @include space;
+}
+
+.wp-block-image {
+    margin: 0;
+
+    figure {
+        margin: 0 0 40px;
+
+        &.aligncenter {
+            text-align: center;
+        }
+
+        &.alignleft {
+
+            @media #{$min_sm} {
+                float: left;
+                margin-right: 40px;
+            }
+        }
+
+        &.alignright {
+
+            @media #{$min_sm} {
+                float: right;
+                margin-left: 40px;
+            }
+        }
+    }
+
+    a {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    img {
+        max-width: 100%;
+
+        display: block;
+    }
+
+    figcaption {
+        @include caption_text;
+
+        margin-top: 10px;
+    }
+}

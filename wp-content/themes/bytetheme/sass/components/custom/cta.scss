@@ -1,0 +1,29 @@
+.cta_block {
+	@include space(true);
+}
+
+.cta_block_inner {
+	@include row;
+}
+
+.cta {}
+
+.cta_title {
+	@include h2;
+
+	margin: 0;
+}
+
+.cta_caption {
+	@include body_text;
+
+	margin: 0;
+}
+
+.cta_link {
+	@include button;
+
+	display: inline-block;
+	margin-top: 10px;
+	vertical-align: top;
+}

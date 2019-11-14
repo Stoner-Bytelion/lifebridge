@@ -1,0 +1,137 @@
+@mixin h1($query: $min_lg) {
+    font-size: 40px;
+    line-height: (50 / 40);
+
+    @media #{$query} {
+        font-size: 50px;
+        line-height: (60 / 50);
+    }
+}
+
+@mixin h2($query: $min_lg) {
+    font-size: 30px;
+    line-height: (40 / 30);
+
+    @media #{$query} {
+        font-size: 40px;
+        line-height: (50 / 40);
+    }
+}
+
+@mixin h3($query: $min_lg) {
+    font-size: 20px;
+    line-height: (30 / 20);
+
+    @media #{$query} {
+        font-size: 30px;
+        line-height: (40 / 30);
+    }
+}
+
+@mixin h4($query: $min_lg) {
+    font-size: 18px;
+    line-height: (28 / 18);
+
+    @media #{$query} {
+        font-size: 20px;
+        line-height: (30 / 20);
+    }
+}
+
+@mixin h5($query: $min_lg) {
+    font-size: 16px;
+}
+
+@mixin h6($query: $min_lg) {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+@mixin intro_text($query: $min_lg) {
+    font-size: 18px;
+    line-height: (26 / 18);
+
+    @media #{$query} {
+        font-size: 24px;
+        line-height: (36 / 24);
+    }
+}
+
+@mixin body_text($query: $min_lg) {
+    font-size: 16px;
+    line-height: (24 / 16);
+
+    @media #{$query} {
+        font-size: 18px;
+        line-height: (26 / 18);
+    }
+}
+
+@mixin caption_text() {
+    font-size: 14px;
+    line-height: (22 / 14);
+}
+
+.typography {
+
+    h1, h2, h3, h4, h5, h6 {
+
+		+ * {
+			margin-top: 0;
+		}
+    }
+
+    h1 {
+        @include h1;
+
+        margin: 1em 0 20px 0;
+    }
+
+    h2 {
+        @include h2;
+
+        margin: 1em 0 20px 0;
+    }
+
+    h3 {
+        @include h3;
+
+        margin: 1em 0 20px 0;
+    }
+
+    h4 {
+        @include h4;
+
+        margin: 1em 0 20px 0;
+    }
+
+    h5 {
+        @include h5;
+
+        margin: 1em 0 20px 0;
+    }
+
+    h6 {
+        @include h6;
+
+        margin: 1em 0 20px 0;
+    }
+
+    p {
+        @include body_text;
+    }
+
+    ul,
+    ol {
+        @include body_text;
+    }
+
+    li {
+        margin: 4px 0;
+    }
+
+    a {
+        color: blue;
+        text-decoration: underline;
+    }
+}

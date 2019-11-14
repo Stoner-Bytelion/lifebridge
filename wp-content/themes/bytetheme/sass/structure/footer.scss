@@ -1,0 +1,16 @@
+.page_footer {
+	background: #000;
+	color: #fff;
+	padding: 30px 0;
+}
+
+.page_footer_inner {
+	@include row($mq_min_xxl);
+}
+
+.page_footer_group {
+
+	&:first-child {
+		margin-bottom: 10px;
+	}
+}

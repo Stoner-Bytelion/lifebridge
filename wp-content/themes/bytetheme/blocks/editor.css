@@ -1,0 +1,45 @@
+.editor-block-list__block {
+	margin-bottom: 90px;
+}
+
+.editor_item {
+	background: #fafafa;
+	border: 1px solid rgba(0, 0, 0, .1);
+	border-radius: 3px;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+
+.editor_label {
+	background: rgba(0, 0, 0, .1);
+	display: inline-block;
+	font-size: 12px;
+	padding: 2px 10px;
+	vertical-align: bottom;
+}
+
+.editor_item img {
+	max-width: 240px;
+
+	border: 1px dashed rgba(0, 0, 0, .4);
+	border-radius: 6px;
+	cursor: pointer;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.editor_item img[src*="placehold"] {
+	opacity: .5;
+}
+
+.editor-rich-text__editable {
+	background: #fff;
+	border: 1px solid rgba(0, 0, 0, .1);
+	margin-bottom: 12px;
+	padding: 5px 10px;
+	transition: border .25s;
+}
+
+.editor-rich-text__editable:focus {
+	border-color: #000;
+}

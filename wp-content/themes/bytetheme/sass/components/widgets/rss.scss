@@ -1,0 +1,40 @@
+.rss {
+	@include space;
+	@include row;
+}
+
+.wp-block-rss {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.wp-block-rss__item {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+}
+
+.wp-block-rss__item-title {
+	@include h4;
+
+	margin-bottom: 10px;
+
+	a {
+		display: bkock;
+	}
+}
+
+.wp-block-rss__item-publish-date {
+	@include caption_text;
+}
+
+.wp-block-rss__item-author {
+	@include caption_text;
+}
+
+.wp-block-rss__item-excerpt {
+	@include body_text;
+
+	margin-top: 10px;
+}

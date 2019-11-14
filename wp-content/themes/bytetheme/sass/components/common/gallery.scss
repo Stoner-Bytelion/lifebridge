@@ -1,0 +1,55 @@
+.wp-block-gallery {
+    @include row;
+    @include space;
+
+    list-style: none;
+
+    @media #{$min_sm} {
+        @include columns(2, 20px);
+    }
+
+    &.columns-3 {
+
+        @media #{$min_md} {
+            column-count: 3;
+        }
+    }
+
+    &.columns-4 {
+
+        @media #{$min_md} {
+            column-count: 3;
+        }
+
+        @media #{$min_xl} {
+            column-count: 4;
+        }
+    }
+}
+
+.blocks-gallery-item {
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    figure {
+        margin: 0;
+    }
+
+    a {
+        display: block;
+    }
+
+    img {
+        width: 100%;
+
+        display: block;
+    }
+
+    figcaption {
+        @include caption_text;
+
+        margin-top: 10px;
+    }
+}

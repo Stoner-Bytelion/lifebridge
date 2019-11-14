@@ -1,0 +1,54 @@
+.contact {
+	@include row;
+	@include space(true);
+}
+
+.contact_header {
+	align-items: center;
+	display: flex;
+}
+
+.contact_info {}
+
+.contact_name {
+	@include h3;
+
+	margin: 0;
+}
+
+.contact_title {
+	@include body_text;
+
+	margin: 0;
+}
+
+.contact_figure {
+	max-width: 100px;
+
+	order: -2;
+	margin: 0 20px 0 0;
+}
+
+.contact_image {
+	width: 100%;
+
+	border-radius: 50%;
+	display: block;
+}
+
+.contact_details {
+	@include caption_text;
+
+	padding-left: 120px;
+}
+
+.contact_detail {
+
+	&:not(:last-child) {
+		margin-bottom: 5px;
+	}
+}
+
+.contact_detail_hint {}
+
+.contact_detail_info {}

@@ -1,0 +1,14 @@
+.code {
+	@include row;
+	@include space;
+}
+
+.wp-block-code {
+	margin: 0;
+
+	code {
+		width: 100%;
+
+		display: block;
+	}
+}

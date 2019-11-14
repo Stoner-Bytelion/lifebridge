@@ -1,0 +1,14 @@
+.paragraph {
+    @include row;
+
+    p {}
+
+    .has-drop-cap {
+
+        &:first-letter {
+            font-size: 300%;
+            margin-right: 2px;
+            line-height: 1;
+        }
+    }
+}

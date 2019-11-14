@@ -1,0 +1,18 @@
+.wp-block-video {
+    @include row;
+    @include space;
+
+    video {
+        width: 100%;
+
+        background: #000;
+        display: block;
+        object-fit: cover;
+    }
+
+    figcaption {
+        @include caption_text;
+
+        margin-top: 10px;
+    }
+}

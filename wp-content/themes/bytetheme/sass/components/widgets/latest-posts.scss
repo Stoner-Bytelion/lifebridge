@@ -1,0 +1,20 @@
+.latest_posts {
+	@include space;
+	@include row;
+}
+
+.wp-block-latest-posts {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		border-bottom: 1px solid #eee;
+		margin-bottom: 30px;
+		padding-bottom: 30px;
+	}
+
+	a {}
+}
+
+.wp-block-latest-posts__post-date {}

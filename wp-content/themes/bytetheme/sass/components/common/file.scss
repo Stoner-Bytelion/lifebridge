@@ -1,0 +1,15 @@
+.wp-block-file {
+    @include row;
+    @include space;
+
+    a:first-child {
+        display: inline-block;
+        margin-right: 10px;
+    }
+}
+
+.wp-block-file__button {
+    @include button;
+
+    display: inline-block;
+}

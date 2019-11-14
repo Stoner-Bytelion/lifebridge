@@ -1,0 +1,47 @@
+.gallery {
+	@include space(true);
+}
+
+.gallery_inner {
+	@include row;
+}
+
+.gallery_items {
+	position: relative;
+
+	overflow: hidden;
+
+	.slick-list {
+		margin: 0 -10px;
+	}
+}
+
+.gallery_item {
+	padding: 0 10px;
+}
+
+.gallery_figure {
+	margin: 0;
+}
+
+.gallery_image {
+	width: 100%;
+}
+
+.gallery_details {
+	margin-top: 10px;
+}
+
+.gallery_index {
+	@include caption_text;
+}
+
+.gallery_index_number {}
+
+.gallery_index_label {}
+
+.gallery_item_caption {
+	@include caption_text;
+
+	margin: 0;
+}

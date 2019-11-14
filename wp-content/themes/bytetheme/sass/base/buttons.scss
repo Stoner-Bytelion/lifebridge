@@ -1,0 +1,30 @@
+@mixin button($theme: "default") {
+	background: #eee;
+	color: inherit;
+	padding: 10px 20px;
+	text-decoration: none;
+	transition:
+		background .25s,
+		color .25s;
+
+	&:hover,
+	&:focus {
+		background: #000;
+		color: #fff;
+	}
+}
+
+.page_skip {
+	@include button;
+
+	position: absolute;
+	top: 0;
+	left: 50%;
+
+	transform: translate(-50%, -300%);
+	transition: transform .25s;
+
+	&:focus {
+		transform: translate(-50%, 40px);
+	}
+}

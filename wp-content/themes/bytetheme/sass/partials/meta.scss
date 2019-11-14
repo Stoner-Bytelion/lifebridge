@@ -1,0 +1,42 @@
+.meta {
+	margin-bottom: 10px;
+}
+
+.meta_details {}
+
+.meta_detail {
+	display: flex;
+
+	&:not(:last-child) {
+		margin-bottom: 6px;
+	}
+}
+
+.meta_detail_icon {
+	margin-right: 6px;
+}
+
+.meta_detail_label {
+
+	&:after {
+
+		@media print {
+			content: normal;
+			display: none;
+		}
+	}
+}
+
+.meta_detail_label_hint {
+	@include visually_hide;
+}
+
+.meta_detail_link {
+	color: inherit;
+	display: inline-block;
+	text-decoration: underline;
+	transition: color .25s;
+
+	&:hover,
+	&:focus {}
+}

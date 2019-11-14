@@ -1,0 +1,8 @@
+.preformatted {
+	@include row;
+	@include space;
+}
+
+.wp-block-preformatted {
+	margin: 0;
+}

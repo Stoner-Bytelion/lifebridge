@@ -1,0 +1,21 @@
+.social_menu {
+	align-items: center;
+	display: flex;
+	list-style: none;
+	margin: 0 -5px;
+	padding: 0;
+}
+
+.social_menu_item {}
+
+.social_menu_link {
+	color: inherit;
+	display: block;
+	padding: 5px;
+}
+
+.social_menu_icon {}
+
+.social_menu_label {
+	@include visually_hide;
+}

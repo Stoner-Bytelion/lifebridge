@@ -1,0 +1,9 @@
+.wp-block-audio {
+    @include row;
+    @include space;
+
+    audio {
+        width: 100%;
+        display: block;
+    }
+}

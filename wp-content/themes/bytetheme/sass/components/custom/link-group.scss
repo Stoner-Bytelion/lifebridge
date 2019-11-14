@@ -1,0 +1,49 @@
+.link_group {
+	@include space(true);
+
+	overflow: hidden;
+}
+
+.link_group_inner {
+	@include row;
+}
+
+.link_group_items {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	@media #{$min_md} {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -28px;
+	}
+}
+
+.link_group_item {
+
+	@media #{$min_md} {
+		width: 50%;
+
+		display: flex;
+		padding: 0 28px;
+	}
+}
+
+.link_group_link {
+	width: 100%;
+
+	border-bottom: 1px solid #eee;
+	display: block;
+	padding: 13px 0;
+}
+
+.link_group_label {
+	display: inline;
+}
+
+.link_group_icon {
+	display: inline-block;
+	margin-left: 10px;
+	vertical-align: middle;
+}

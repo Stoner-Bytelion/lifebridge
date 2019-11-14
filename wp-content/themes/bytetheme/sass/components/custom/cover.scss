@@ -1,0 +1,51 @@
+.cover {
+	position: relative;
+
+	background: #000;
+	color: #fff;
+
+	&:before {
+		@include cover;
+
+		z-index: 2;
+
+		background: rgba(#000, .25);
+		content: "";
+	}
+}
+
+.cover_figure {
+	@include cover;
+
+	margin: 0;
+}
+
+.cover_background {
+	@include cover;
+
+	object-fit: cover;
+}
+
+.cover_inner {
+	@include row;
+
+	position: relative;
+	z-index: 4;
+
+	padding-top: 25%;
+	padding-bottom: 25%;
+}
+
+.cover_body {}
+
+.cover_title {
+	@include h1;
+
+	margin: 0;
+}
+
+.cover_caption {
+	@include intro_text;
+
+	margin: 0;
+}

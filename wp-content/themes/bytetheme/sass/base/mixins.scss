@@ -1,0 +1,62 @@
+@mixin row($max: $mq_min_xl) {
+	max-width: $max * 1px;
+
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+@mixin space($expanded: false) {
+	margin-top: 40px;
+	margin-bottom: 40px;
+
+	@if $expanded {
+
+		@media #{$min_md} {
+			margin-top: 80px;
+			margin-bottom: 80px;
+		}
+	}
+}
+
+@mixin center() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	transform: translate(-50%, -50%);
+}
+
+@mixin cover() {
+	height: 100%;
+	width: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+@mixin columns($count, $gap: 0) {
+	column-count: $count;
+	column-gap: $gap;
+
+	& > * {
+		column-break-inside: avoid;
+		break-inside: avoid;
+		page-break-inside: avoid;
+	}
+}
+
+@mixin visually_hide() {
+	width: 1px;
+	height: 1px;
+
+	position: absolute;
+
+	border: 0;
+	clip: rect(0 0 0 0);
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+}

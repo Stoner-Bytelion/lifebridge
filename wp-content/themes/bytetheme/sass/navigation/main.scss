@@ -1,0 +1,73 @@
+.main_menu {}
+
+.main_menu_list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	.sub-menu {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.main_menu_list_lg {
+	display: none;
+
+	@media #{$min_lg} {
+		align-items: center;
+		display: flex;
+	}
+
+	> .menu-item {
+
+		> a {
+			color: inherit;
+			display: block;
+			padding: 13px 10px;
+		}
+	}
+
+	.sub-menu {
+		display: none;
+
+		> .menu-item {
+
+			> a {
+				color: inherit;
+				display: block;
+				padding: 13px 0;
+			}
+		}
+	}
+}
+
+.main_menu_list_sm {
+	@include row;
+
+	@media #{$min_lg} {
+		display: none;
+	}
+
+	> .menu-item {
+
+		> a {
+			color: inherit;
+			display: block;
+			padding: 13px 0;
+		}
+	}
+
+	.sub-menu {
+
+		> .menu-item {
+
+			> a {
+				color: inherit;
+				display: block;
+				padding: 13px 20px;
+			}
+		}
+	}
+}

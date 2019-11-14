@@ -1,0 +1,38 @@
+.card_group {
+	@include space(true);
+}
+
+.card_group_inner {
+	@include row;
+}
+
+.card_group_items {
+
+	.slick-list {
+		margin: 0 -10px;
+	}
+}
+
+.card_group_item {
+	padding: 0 10px;
+}
+
+.card_group_item_figure {
+	margin: 0;
+}
+
+.card_group_item_image {
+	width: 100%;
+
+	display: block;
+}
+
+.card_group_item_details {
+	margin-top: 10px;
+}
+
+.card_group_item_caption {
+	@include body_text;
+
+	margin: 0;
+}

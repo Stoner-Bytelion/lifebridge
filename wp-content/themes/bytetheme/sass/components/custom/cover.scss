@@ -32,20 +32,31 @@
 	position: relative;
 	z-index: 4;
 
-	padding-top: 25%;
-	padding-bottom: 25%;
+	padding-top: calc(4% + 40px);
+	padding-bottom: calc(4% + 40px);
 }
 
-.cover_body {}
+.cover_body {
+
+	text-align: center;
+}
 
 .cover_title {
 	@include h1;
 
-	margin: 0;
+	max-width: 900px;
+
+	margin: 0 auto 22px;
 }
 
 .cover_caption {
 	@include intro_text;
 
-	margin: 0;
+	max-width: 800px;
+
+	margin: 0 auto;
+
+	strong {
+		display: block;
+	}
 }

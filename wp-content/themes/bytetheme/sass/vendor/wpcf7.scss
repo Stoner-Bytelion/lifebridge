@@ -1,12 +1,18 @@
 div.wpcf7 {
-	@include row;
-	@include space;
+	@include row($mq_min_md);
+	@include space(true);
+
+	margin-top: 0;
 }
 
 .wpcf7-form {
 
 	label {
 		display: block;
+	}
+
+	.required-text {
+		text-align: right;
 	}
 }
 

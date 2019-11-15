@@ -1,5 +1,7 @@
 .topic_block {
-	@include space(true);
+	@include bubble(true);
+
+	background: $navy;
 }
 
 .topic_block_inner {
@@ -16,35 +18,31 @@
 	overflow: hidden;
 
 	@media #{$min_md} {
-		align-items: center;
+		align-items: flex-end;
 		display: flex;
 	}
 
 	&:not(:last-child) {
-		margin-bottom: 60px;
+		margin-bottom: 50px;
+
+		@media #{$min_lg} {
+			margin-bottom: 90px;
+		}
 	}
 }
 
 .topic_figure {
-	width: 115px;
-
-	margin: 0 0 20px 0;
-
-	@media (min-width: 360px) {
-		float: right;
-		margin-left: 20px;
-	}
-
-	@media #{$min_sm} {
-		width: 30%;
-	}
+	margin: 0;
 
 	@media #{$min_md} {
-		width: auto;
+		width: 50%;
+	}
 
-		flex: 0 0 30%;
-		float: none;
-		margin: 0 30px 0 0;
+	.topic_row:nth-of-type(odd) & {
+
+		@media #{$min_md} {
+			order: 2;
+		}
 	}
 }
 
@@ -54,12 +52,63 @@
 	display: block;
 }
 
-.topic_wrapper {}
+.topic_wrapper {
+	position: relative;
+
+	background: #fff;
+	padding: 20px 20px 25px;
+
+	@media #{$min_md} {
+		min-height: 400px;
+		width: calc(50% + 40px);
+
+		align-content: center;
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 40px;
+	}
+
+	@media #{$min_lg} {
+		margin-bottom: 90px;
+		padding: 40px 40px 50px;
+	}
+
+	@media #{$min_xl} {
+		padding: 70px 75px;
+	}
+
+	.topic_row:nth-of-type(odd) & {
+
+		@media #{$min_md} {
+			margin-right: -40px;
+		}
+
+		@media #{$min_lg} {
+			margin-right: -80px;
+		}
+	}
+
+	.topic_row:nth-of-type(even) & {
+
+		@media #{$min_md} {
+			margin-left: -40px;
+		}
+
+		@media #{$min_lg} {
+			margin-left: -80px;
+		}
+	}
+}
 
 .topic_title {
 	@include h3;
 
-	margin: 0;
+	color: #053E77;
+	margin: 0 0 13px;
+
+	@media #{$min_xl} {
+		margin-bottom: 23px;
+	}
 }
 
 .topic_caption {

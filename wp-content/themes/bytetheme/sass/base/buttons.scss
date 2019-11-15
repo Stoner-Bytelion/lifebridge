@@ -1,16 +1,38 @@
 @mixin button($theme: "default") {
-	background: #eee;
-	color: inherit;
-	padding: 10px 20px;
+	background: $orange;
+	border-radius: 48px;
+	color: #fff;
+	padding: 14px 30px 16px;
 	text-decoration: none;
 	transition:
 		background .25s,
 		color .25s;
 
+	[class*="label"] {
+		font-family: 'Muli', sans-serif;
+		font-weight: 700;
+	}
+
+	[class*="icon"] {
+		display: block;
+		margin-left: 10px;
+	}
+
 	&:hover,
 	&:focus {
-		background: #000;
+		background: $navy;
 		color: #fff;
+
+		[class*="icon"] {
+			animation: boop 1s infinite;
+		}
+	}
+}
+
+@keyframes boop {
+
+	50% {
+		transform: translate(4px, 0);
 	}
 }
 

@@ -3049,19 +3049,19 @@ var CardGroup = (function() {
 			slidesToShow: 4,
 			responsive: [
 				{
-					breakpoint: 1220,
+					breakpoint: 1400,
 					settings: {
 						slidesToShow: 3
 					}
 				},
 				{
-					breakpoint: 740,
+					breakpoint: 880,
 					settings: {
 						slidesToShow: 2
 					}
 				},
 				{
-					breakpoint: 500,
+					breakpoint: 600,
 					settings: {
 						slidesToShow: 1
 					}
@@ -3109,9 +3109,42 @@ var Menu = (function() {
 		init: init
 	}
 })();
+var News = (function() {
+	var init = function() {
+		setup();
+	};
+
+	var setup = function() {
+		jQuery('.news_items').slick({
+			dots: true,
+			infinite: false,
+			adaptiveHeight: true,
+			slidesToShow: 3,
+			responsive: [
+				{
+					breakpoint: 800,
+					settings: {
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 1
+					}
+				}
+			]
+		});
+	};
+
+	return {
+		init: init
+	}
+})();
 (function() {
 	Menu.init();
 	Accordion.init();
 	CardGroup.init();
 	Gallery.init();
+	News.init();
 })();

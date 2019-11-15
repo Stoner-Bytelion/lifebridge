@@ -6,11 +6,16 @@
 
 body {
 	min-width: 300px;
+
+	color: #4B4B4B;
+	font-family: 'Open Sans', sans-serif;
 }
 
 svg {
 	height: 16px;
 	width: 16px;
+
+	display: block;
 	fill: currentColor;
 	transition:
 		fill .25s,

@@ -1,40 +1,17 @@
             <footer class="page_footer">
                 <div class="page_footer_inner">
-                    <div class="page_footer_group">
-                        <div class="meta">
-                            <div class="meta_details">
-                                <div class="meta_detail">
-                                    <span class="meta_detail_icon"><?php icon('place'); ?></span>
-                                    <a class="meta_detail_label meta_detail_link" href="" target="_blank" rel="noopener">
-                                        <span class="meta_address_street" itemprop="streetAddress"><?=$site["address"]["street"]?></span>,
-                                        <span class="meta_address_group">
-                                            <span class="meta_address_city" itemprop="addressLocality"><?=$site["address"]["city"]?></span>,
-                                            <span class="meta_address_state" itemprop="addressRegion"><?=$site["address"]["state"]?></span>
-                                            <span class="meta_address_zip" itemprop="postalCode"><?=$site["address"]["zip"]?></span>
-                                        </span>
-                                    </a>
-                                </div>
-                                <div class="meta_detail">
-                                    <span class="meta_detail_icon"><?php icon('mail'); ?></span>
-                                    <a class="meta_detail_label meta_detail_link" href="mailto:{{ email }}" itemprop="email">Email: <?=$site["address"]["email"]?></pre></a>
-                                </div>
-                                <div class="meta_detail">
-                                    <span class="meta_detail_icon"><?php icon('phone'); ?></span>
-                                    <a class="meta_detail_label meta_detail_link" href="tel:{{ site.tel(phone) }}" itemprop="telephone">Phone: <?=$site["address"]["phone"]?></a>
-                                </div>
-                            </div>
-                        </div>
-                        <?php import('/menus/social.php'); ?>
+                    <div class="credit">
+                        <p>Serving Maryland, the District of Columbia and portions of Virginia, CareFirst BlueCross BlueShield is the shared business name of CareFirst of Maryland, Inc. and Group Hospitalization and Medical Services, Inc. In the District of Columbia and Maryland, CareFirst MedPlus is the business name of First Care, Inc. In Virginia, CareFirst MedPlus is the business name of First Care, Inc. of Maryland (Used in VA by: First Care, Inc.). First Care, Inc., CareFirst of Maryland, Inc., Group Hospitalization and Medical Services, Inc., CareFirst BlueChoice, Inc. and The Dental Network are independent licensees of the Blue Cross and Blue Shield Association. The Blue Cross® and Blue Shield® and the Cross and Shield Symbols are registered service marks of the Blue Cross and Blue Shield Association, an association of independent Blue Cross and Blue Shield Plans.</p>
+                        <p>CareFirst of Maryland, Inc. and The Dental Network underwrite products in Maryland only.</p>
                     </div>
-                    <div class="page_footer_group">
-                        <p class="copyright">&copy; Client <?=date("Y")?></p>
-                    </div>
+                    <div class="copyright">&copy; CareFirst LifeBridge Innovation Center <?=date("Y")?> | All Rights Reserved | <a href="https://member.carefirst.com/members/mandates-policies/cookie-policy.page" target="_blank">CareFirst Privacy Policy</a> | <a href="http://www.lifebridgehealth.org/Main/TermsofUseandPrivacyPolicy.aspx" target="_blank">LifeBridge Privacy Policy</a></div>
                 </div>
                 <div class="page_menu">
                     <div class="page_menu_inner">
                         <?php
                             wp_nav_menu(
                                 array(
+                                    'container' => 'ul',
                                     'container_class' => 'main_menu main_menu_sm',
                                     'menu_class' => 'main_menu_list  main_menu_list_sm',
                                     'theme_location' => 'main_menu'

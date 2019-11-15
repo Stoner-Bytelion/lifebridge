@@ -1,4 +1,29 @@
 .freeform {
-	@include row;
 	@include space;
+
+	.home & {
+		@include row($mq_min_md);
+		@include space(true);
+
+		margin-bottom: 0;
+		text-align: center;
+	}
+
+	h2 {
+
+		.home & {
+			color: #1F1F1F;
+			margin-top: 0;
+		}
+	}
+
+	em {
+
+		.home & {
+			@include h4;
+
+			color: #1F1F1F;
+			font-style: normal;
+		}
+	}
 }

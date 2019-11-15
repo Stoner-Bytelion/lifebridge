@@ -71,10 +71,6 @@
                             value={ item.caption }
                             onChange={ (value) => handleItemChange(index, value, "caption") }
                         />
-                        <URLInputButton
-                            url={ item.url }
-                            onChange={ (value) => handleItemChange(index, value, "url") }
-                        />
                         <Button
                             className="editor_button"
                             isDefault

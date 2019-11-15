@@ -3,4 +3,5 @@
 	Accordion.init();
 	CardGroup.init();
 	Gallery.init();
+	News.init();
 })();

@@ -1,5 +1,3 @@
-.main_menu {}
-
 .main_menu_list {
 	list-style: none;
 	margin: 0;
@@ -18,14 +16,33 @@
 	@media #{$min_lg} {
 		align-items: center;
 		display: flex;
+		margin-right: 25px;
 	}
 
-	> .menu-item {
+	@media #{$min_xl} {
+		margin-right: 45px;
+	}
+
+	> li {
 
 		> a {
 			color: inherit;
 			display: block;
-			padding: 13px 10px;
+			font-family: 'Muli', sans-serif;
+			font-weight: 700;
+			padding: 35px 25px;
+			text-decoration: none;
+			transition: box-shadow .25s;
+
+			@media #{$min_xl} {
+				padding-right: 45px;
+				padding-left: 45px;
+			}
+
+			&:hover,
+			&:focus {
+				box-shadow: inset 0 -5px 0 0 $blue;
+			}
 		}
 	}
 
@@ -50,12 +67,16 @@
 		display: none;
 	}
 
-	> .menu-item {
+	> li {
 
 		> a {
 			color: inherit;
 			display: block;
-			padding: 13px 0;
+			font-family: 'Muli', sans-serif;
+			font-weight: 700;
+			padding: 10px 0;
+			text-decoration: none;
+			transition: box-shadow .25s;
 		}
 	}
 

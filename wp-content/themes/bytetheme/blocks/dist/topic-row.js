@@ -86,9 +86,6 @@
           }, "Caption"), React.createElement(RichText, {
             value: item.caption,
             onChange: value => handleItemChange(index, value, "caption")
-          }), React.createElement(URLInputButton, {
-            url: item.url,
-            onChange: value => handleItemChange(index, value, "url")
           }), React.createElement(Button, {
             className: "editor_button",
             isDefault: true,

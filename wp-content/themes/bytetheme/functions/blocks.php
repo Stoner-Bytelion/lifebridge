@@ -13,6 +13,7 @@
             'card-group',
             'contact',
             'cover',
+            'news',
             'gallery',
             'link-group',
             'topic-row',

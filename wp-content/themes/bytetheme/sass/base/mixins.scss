@@ -20,6 +20,19 @@
 	}
 }
 
+@mixin bubble($expanded: false) {
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	@if $expanded {
+
+		@media #{$min_md} {
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+	}
+}
+
 @mixin center() {
 	position: absolute;
 	top: 50%;

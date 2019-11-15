@@ -11,19 +11,19 @@ var CardGroup = (function() {
 			slidesToShow: 4,
 			responsive: [
 				{
-					breakpoint: 1220,
+					breakpoint: 1400,
 					settings: {
 						slidesToShow: 3
 					}
 				},
 				{
-					breakpoint: 740,
+					breakpoint: 880,
 					settings: {
 						slidesToShow: 2
 					}
 				},
 				{
-					breakpoint: 500,
+					breakpoint: 600,
 					settings: {
 						slidesToShow: 1
 					}

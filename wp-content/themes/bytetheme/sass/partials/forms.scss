@@ -2,34 +2,67 @@ input[type="email"],
 input[type="text"],
 input[type="tel"],
 textarea {
+	@include h4;
+
 	width: 100%;
 
 	-webkit-appearance: none;
 	appearance: none;
-	border: 1px solid #000;
+	border: 0;
+	border-bottom: 1px solid #C9C9C9;
+	outline: 0;
 	padding: 10px 20px;
+	transition:
+		border .25s,
+		box-shadow .25s;
+
+	&:hover,
+	&:focus {
+		border-bottom-color: transparent;
+		box-shadow: inset 0 -5px 0 0 $blue;
+	}
 }
 
 input[type="submit"] {
-	-webkit-appearance: none;
 	appearance: none;
-	background: #000;
+	-webkit-appearance: none;
+	background: $orange;
 	border: 0;
+	border-radius: 48px;
 	color: #fff;
 	cursor: pointer;
-	display: inline-block;
-	padding: 10px 20px;
-	vertical-align: top;
+	font-family: 'Muli', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 14px 50px 16px;
+	transition: background .25s;
+
+	&:hover,
+	&:focus {
+		background: $navy;
+	}
 }
 
 select {
+	@include h4;
+
 	width: 100%;
 
 	-webkit-appearance: none;
 	appearance: none;
-	background: none;
-	border: 1px solid #000;
+	background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAyUlEQVQ4T+3UoQ4CMQyA4f8UCoPCoDAEg0KhUCgkCHiZexhAgEWhMCjUGYJBYVAYFI6MtMmy3HYjTN7U0jRftrZbRuKVJfaowf8rqjXMgRmwAIof2QGwAXZArmAf2AINQc+R6FCwNzAHLnaXFW0KeqpAR4K9FDP57tgo2hL06EHHwBp42lgZaGKKtgU9OOhEsIeL+UAb7QBLYC/oFFgB9zIsBNpoV1ATM9e8+bAq0EZ7csJrCIsBbdTsv6MR6n79OUQ+uEBa8hp+AG+MJhX9jRUbAAAAAElFTkSuQmCC') no-repeat calc(100% - 20px) 50%;
+	border: 0;
+	border-bottom: 1px solid #C9C9C9;
 	border-radius: 0;
 	cursor: pointer;
 	padding: 10px 20px;
+	transition:
+		border .25s,
+		box-shadow .25s;
+
+	&:hover,
+	&:focus {
+		border-bottom-color: transparent;
+		box-shadow: inset 0 -5px 0 0 $blue;
+	}
 }

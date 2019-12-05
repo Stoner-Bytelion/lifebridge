@@ -15,13 +15,18 @@
 }
 
 .page_details_header {
-	background: #fafafa;
+	background: $navy;
+	color: #fff;
 	padding-top: 40px;
 	padding-bottom: 40px;
 }
 
 .page_details_header_inner {
 	@include row;
+
+	text-align: center;
 }
 
-.page_details_title {}
+.page_details_title {
+	@include h1;
+}

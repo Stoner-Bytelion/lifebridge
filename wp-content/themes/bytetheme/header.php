@@ -6,7 +6,6 @@
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <title><?php wp_title( '|', true, 'right' ); ?></title>
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,600,700|Open+Sans:400,700&display=swap" rel="stylesheet">
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
@@ -21,10 +20,10 @@
                         <?php
                             wp_nav_menu(
                                 array(
+                                    'theme_location' => 'main_menu',
                                     'container' => 'ul',
                                     'container_class' => 'main_menu main_menu_lg',
-                                    'menu_class' => 'main_menu_list main_menu_list_lg',
-                                    'theme_location' => 'main_menu'
+                                    'menu_class' => 'main_menu_list main_menu_list_lg'
                                 )
                             );
                         ?>

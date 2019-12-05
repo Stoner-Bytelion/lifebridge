@@ -1,16 +1,23 @@
+"use strict";
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 (function () {
-  const {
-    registerBlockType
-  } = wp.blocks;
-  const {
-    Button
-  } = wp.components;
-  const {
-    MediaUploadCheck,
-    MediaUpload,
-    RichText,
-    URLInputButton
-  } = wp.editor;
+  var registerBlockType = wp.blocks.registerBlockType;
+  var Button = wp.components.Button;
+  var _wp$editor = wp.editor,
+      MediaUploadCheck = _wp$editor.MediaUploadCheck,
+      MediaUpload = _wp$editor.MediaUpload,
+      RichText = _wp$editor.RichText,
+      URLInputButton = _wp$editor.URLInputButton;
   registerBlockType('bytetheme/card-group', {
     title: 'Card Group',
     icon: 'shield',
@@ -21,37 +28,39 @@
       },
       items: {
         type: 'array',
-        default: []
+        "default": []
       },
       url: {
         type: 'string'
       }
     },
-    edit: ({
-      attributes,
-      setAttributes
-    }) => {
-      const handleAddItem = () => {
-        const items = [...attributes.items];
+    edit: function edit(_ref) {
+      var attributes = _ref.attributes,
+          setAttributes = _ref.setAttributes;
+
+      var handleAddItem = function handleAddItem() {
+        var items = _toConsumableArray(attributes.items);
+
         items.push({
           img: 'http://placehold.it/500x282',
           caption: ''
         });
         setAttributes({
-          items
+          items: items
         });
       };
 
-      const handleRemoveItem = index => {
-        const items = [...attributes.items];
+      var handleRemoveItem = function handleRemoveItem(index) {
+        var items = _toConsumableArray(attributes.items);
+
         items.splice(index, 1);
         setAttributes({
-          items
+          items: items
         });
       };
 
-      const handleItemChange = (index, value, type) => {
-        const items = [...attributes.items];
+      var handleItemChange = function handleItemChange(index, value, type) {
+        var items = _toConsumableArray(attributes.items);
 
         if (type == "img") {
           value = value.sizes.full.url;
@@ -59,29 +68,29 @@
 
         items[index][type] = value;
         setAttributes({
-          items
+          items: items
         });
       };
 
-      const handleSingleChange = (value, type) => {
-        const change = {
-          [type]: value
-        };
+      var handleSingleChange = function handleSingleChange(value, type) {
+        var change = _defineProperty({}, type, value);
+
         setAttributes(change);
       };
 
-      let itemFields;
+      var itemFields;
 
       if (attributes.items.length) {
-        itemFields = attributes.items.map((item, index) => {
+        itemFields = attributes.items.map(function (item, index) {
           return React.createElement("div", {
             className: "editor_item"
           }, React.createElement(MediaUploadCheck, null, React.createElement(MediaUpload, {
-            onSelect: value => handleItemChange(index, value, "img"),
+            onSelect: function onSelect(value) {
+              return handleItemChange(index, value, "img");
+            },
             allowedTypes: ['image'],
-            render: ({
-              open
-            }) => {
+            render: function render(_ref2) {
+              var open = _ref2.open;
               return React.createElement("img", {
                 src: item.img,
                 onClick: open
@@ -91,16 +100,22 @@
             className: "editor_label"
           }, "Title"), React.createElement(RichText, {
             value: item.title,
-            onChange: value => handleItemChange(index, value, "title")
+            onChange: function onChange(value) {
+              return handleItemChange(index, value, "title");
+            }
           }), React.createElement("label", {
             className: "editor_label"
           }, "Caption"), React.createElement(RichText, {
             value: item.caption,
-            onChange: value => handleItemChange(index, value, "caption")
+            onChange: function onChange(value) {
+              return handleItemChange(index, value, "caption");
+            }
           }), React.createElement(Button, {
             className: "editor_button",
             isDefault: true,
-            onClick: () => handleRemoveItem(index)
+            onClick: function onClick() {
+              return handleRemoveItem(index);
+            }
           }, "Remove Item"));
         });
       }
@@ -113,18 +128,22 @@
         className: "editor_label"
       }, "Title"), React.createElement(RichText, {
         value: attributes.title,
-        onChange: value => handleSingleChange(value, "title")
+        onChange: function onChange(value) {
+          return handleSingleChange(value, "title");
+        }
       }), itemFields, React.createElement(Button, {
         className: "editor_button",
         isDefault: true,
         onClick: handleAddItem
       }, "Add Item"), React.createElement(URLInputButton, {
         url: attributes.url,
-        onChange: value => handleSingleChange(value, "url")
+        onChange: function onChange(value) {
+          return handleSingleChange(value, "url");
+        }
       }))];
     },
-    save: props => {
-      const items = props.attributes.items.map((item, index) => {
+    save: function save(props) {
+      var items = props.attributes.items.map(function (item, index) {
         return React.createElement("div", {
           className: "card_group_item"
         }, React.createElement("figure", {

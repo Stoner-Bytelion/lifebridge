@@ -13,9 +13,12 @@ wp.domReady(function() {
 	wp.blocks.unregisterBlockType('core/calendar');
 	wp.blocks.unregisterBlockType('core/columns');
 	wp.blocks.unregisterBlockType('core/cover');
+	wp.blocks.unregisterBlockType('core/heading');
 	wp.blocks.unregisterBlockType('core/latest-comments');
+	wp.blocks.unregisterBlockType('core/list');
 	wp.blocks.unregisterBlockType('core/more');
 	wp.blocks.unregisterBlockType('core/nextpage');
+	wp.blocks.unregisterBlockType('core/paragraph');
 	wp.blocks.unregisterBlockType('core/search');
 	wp.blocks.unregisterBlockType('core/shortcode');
 	wp.blocks.unregisterBlockType('core/spacer');

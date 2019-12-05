@@ -7,7 +7,7 @@
 	z-index: 4;
 
 	background: none;
-	background: $blue;
+	background: $green;
 	border: 0;
 	border-radius: 50%;
 	box-shadow: 0 2px 8px 0 rgba(#000, .2);
@@ -98,7 +98,7 @@
 			height: 12px;
 			width: 12px;
 
-			border: 2px solid $blue;
+			border: 2px solid $green;
 			border-radius: 50%;
 			content: "";
 			transition: background .25s;
@@ -108,14 +108,14 @@
 		&:focus {
 
 			&:before {
-				background: rgba($blue, .5);
+				background: rgba($green, .5);
 			}
 		}
 
 		&[aria-selected]  {
 
 			&:before {
-				background: $blue;
+				background: $green;
 			}
 		}
 	}

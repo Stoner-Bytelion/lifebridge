@@ -12,19 +12,24 @@
 .news_header {
 	max-width: 900px;
 
-	margin: 0 auto 40px;
+	margin: 0 auto 30px;
 	text-align: center;
 
 	@media #{$min_lg} {
-		margin-bottom: 60px;
+		margin-bottom: 48px;
 	}
 }
 
 .news_title {
 	@include h2;
+	@include divider;
 
-	color: $dark;
+	color: $blacky;
 	margin: 0;
+
+	&:after {
+		margin: 10px auto 0;
+	}
 }
 
 .news_items {
@@ -70,7 +75,7 @@
 .news_item_title {
 	@include h4;
 
-	color: $dark;
+	color: $blacky;
 	margin: 0 0 10px;
 }
 

@@ -102,12 +102,17 @@
 
 .topic_title {
 	@include h3;
+	@include divider;
 
 	color: #053E77;
-	margin: 0 0 13px;
+	margin: 0 0 12px;
 
 	@media #{$min_xl} {
-		margin-bottom: 23px;
+		margin-bottom: 22px;
+	}
+
+	&:after {
+		margin-top: 12px;
 	}
 }
 

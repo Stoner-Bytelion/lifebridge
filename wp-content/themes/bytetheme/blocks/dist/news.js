@@ -1,16 +1,21 @@
+"use strict";
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 (function () {
-  const {
-    registerBlockType
-  } = wp.blocks;
-  const {
-    Button
-  } = wp.components;
-  const {
-    MediaUploadCheck,
-    MediaUpload,
-    RichText,
-    URLInputButton
-  } = wp.editor;
+  var registerBlockType = wp.blocks.registerBlockType;
+  var Button = wp.components.Button;
+  var _wp$editor = wp.editor,
+      MediaUploadCheck = _wp$editor.MediaUploadCheck,
+      MediaUpload = _wp$editor.MediaUpload,
+      RichText = _wp$editor.RichText,
+      URLInputButton = _wp$editor.URLInputButton;
   registerBlockType('bytetheme/news', {
     title: 'News',
     icon: 'shield',
@@ -18,34 +23,36 @@
     attributes: {
       items: {
         type: 'array',
-        default: []
+        "default": []
       }
     },
-    edit: ({
-      attributes,
-      setAttributes
-    }) => {
-      const handleAddItem = () => {
-        const items = [...attributes.items];
+    edit: function edit(_ref) {
+      var attributes = _ref.attributes,
+          setAttributes = _ref.setAttributes;
+
+      var handleAddItem = function handleAddItem() {
+        var items = _toConsumableArray(attributes.items);
+
         items.push({
           img: 'http://placehold.it/500x282',
           caption: ''
         });
         setAttributes({
-          items
+          items: items
         });
       };
 
-      const handleRemoveItem = index => {
-        const items = [...attributes.items];
+      var handleRemoveItem = function handleRemoveItem(index) {
+        var items = _toConsumableArray(attributes.items);
+
         items.splice(index, 1);
         setAttributes({
-          items
+          items: items
         });
       };
 
-      const handleItemChange = (index, value, type) => {
-        const items = [...attributes.items];
+      var handleItemChange = function handleItemChange(index, value, type) {
+        var items = _toConsumableArray(attributes.items);
 
         if (type == "img") {
           value = value.sizes.full.url;
@@ -53,22 +60,23 @@
 
         items[index][type] = value;
         setAttributes({
-          items
+          items: items
         });
       };
 
-      let itemFields;
+      var itemFields;
 
       if (attributes.items.length) {
-        itemFields = attributes.items.map((item, index) => {
+        itemFields = attributes.items.map(function (item, index) {
           return React.createElement("div", {
             className: "editor_item"
           }, React.createElement(MediaUploadCheck, null, React.createElement(MediaUpload, {
-            onSelect: value => handleItemChange(index, value, "img"),
+            onSelect: function onSelect(value) {
+              return handleItemChange(index, value, "img");
+            },
             allowedTypes: ['image'],
-            render: ({
-              open
-            }) => {
+            render: function render(_ref2) {
+              var open = _ref2.open;
               return React.createElement("img", {
                 src: item.img,
                 onClick: open
@@ -78,19 +86,27 @@
             className: "editor_label"
           }, "Title"), React.createElement(RichText, {
             value: item.title,
-            onChange: value => handleItemChange(index, value, "title")
+            onChange: function onChange(value) {
+              return handleItemChange(index, value, "title");
+            }
           }), React.createElement("label", {
             className: "editor_label"
           }, "Caption"), React.createElement(RichText, {
             value: item.label,
-            onChange: value => handleItemChange(index, value, "label")
+            onChange: function onChange(value) {
+              return handleItemChange(index, value, "label");
+            }
           }), React.createElement(URLInputButton, {
             url: item.url,
-            onChange: value => handleItemChange(index, value, "url")
+            onChange: function onChange(value) {
+              return handleItemChange(index, value, "url");
+            }
           }), React.createElement(Button, {
             className: "editor_button",
             isDefault: true,
-            onClick: () => handleRemoveItem(index)
+            onClick: function onClick() {
+              return handleRemoveItem(index);
+            }
           }, "Remove Item"));
         });
       }
@@ -105,8 +121,8 @@
         onClick: handleAddItem
       }, "Add Item"))];
     },
-    save: props => {
-      const items = props.attributes.items.map((item, index) => {
+    save: function save(props) {
+      var items = props.attributes.items.map(function (item, index) {
         return React.createElement("div", {
           className: "news_item"
         }, React.createElement("a", {

@@ -1,11 +1,12 @@
+"use strict";
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 (function () {
-  const {
-    registerBlockType
-  } = wp.blocks;
-  const {
-    RichText,
-    URLInputButton
-  } = wp.editor;
+  var registerBlockType = wp.blocks.registerBlockType;
+  var _wp$editor = wp.editor,
+      RichText = _wp$editor.RichText,
+      URLInputButton = _wp$editor.URLInputButton;
   registerBlockType('bytetheme/call-to-action', {
     title: 'Call to Action',
     icon: 'shield',
@@ -21,14 +22,13 @@
         type: 'string'
       }
     },
-    edit: ({
-      attributes,
-      setAttributes
-    }) => {
-      const handleItemChange = (value, type) => {
-        const change = {
-          [type]: value
-        };
+    edit: function edit(_ref) {
+      var attributes = _ref.attributes,
+          setAttributes = _ref.setAttributes;
+
+      var handleItemChange = function handleItemChange(value, type) {
+        var change = _defineProperty({}, type, value);
+
         setAttributes(change);
       };
 
@@ -43,20 +43,25 @@
       }, "Title"), React.createElement(RichText, {
         placeholder: "Title",
         value: attributes.title,
-        onChange: value => handleItemChange(value, "title")
+        onChange: function onChange(value) {
+          return handleItemChange(value, "title");
+        }
       }), React.createElement("label", {
         className: "editor_label"
       }, "Caption"), React.createElement(RichText, {
         value: attributes.caption,
-        onChange: value => handleItemChange(value, "caption")
+        onChange: function onChange(value) {
+          return handleItemChange(value, "caption");
+        }
       }), React.createElement(URLInputButton, {
         url: attributes.url,
-        onChange: value => handleItemChange(value, "url")
+        onChange: function onChange(value) {
+          return handleItemChange(value, "url");
+        }
       })));
     },
-    save: ({
-      attributes
-    }) => {
+    save: function save(_ref2) {
+      var attributes = _ref2.attributes;
       return React.createElement("div", {
         className: "cta_block"
       }, React.createElement("div", {

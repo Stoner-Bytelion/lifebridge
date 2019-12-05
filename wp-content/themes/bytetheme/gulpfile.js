@@ -1,13 +1,13 @@
-const { src, dest, parallel, watch } = require('gulp');
+const { src, dest, series, parallel, watch } = require('gulp');
 const concat = require('gulp-concat');
 var babel = require('gulp-babel');
 const sass = require('gulp-sass');
 
 
 function compileSass() {
-    return src('sass/style.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(dest('./'));
+	return src('sass/style.scss')
+		.pipe(sass().on('error', sass.logError))
+		.pipe(dest('./'));
 }
 
 
@@ -25,24 +25,27 @@ function compileJs() {
 function compileBabel() {
 	return src('blocks/src/*.js')
 		.pipe(babel({
+			presets: ['@babel/env'],
 			plugins: ['transform-react-jsx']
-        }))
-        .pipe(dest('blocks/dist'));
+		}))
+		.pipe(dest('blocks/dist'));
 }
 
 
 function watchFiles(done) {
 	watch('./sass/**/*', compileSass);
-	watch('./blocks/src/*', compileBabel);
 	watch('./javascript/**/*', compileJs);
+	watch('./blocks/src/*', compileBabel);
 
 	done();
 }
 
 
-exports.default = parallel(
-	compileSass,
-	compileJs,
-	compileBabel,
+exports.default = series(
+	parallel(
+		compileSass,
+		compileJs,
+		compileBabel
+	),
 	watchFiles
 );

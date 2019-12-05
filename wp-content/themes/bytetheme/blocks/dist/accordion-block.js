@@ -1,13 +1,17 @@
+"use strict";
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 (function () {
-  const {
-    registerBlockType
-  } = wp.blocks;
-  const {
-    Button
-  } = wp.components;
-  const {
-    RichText
-  } = wp.editor;
+  var registerBlockType = wp.blocks.registerBlockType;
+  var Button = wp.components.Button;
+  var RichText = wp.blockEditor.RichText;
   registerBlockType('bytetheme/accordion-block', {
     title: 'Accordion',
     icon: 'shield',
@@ -15,65 +19,69 @@
     attributes: {
       items: {
         type: 'array',
-        default: []
+        "default": []
       }
     },
-    edit: ({
-      attributes,
-      setAttributes
-    }) => {
-      const handleAddItem = () => {
-        const items = [...attributes.items];
+    edit: function edit(_ref) {
+      var attributes = _ref.attributes,
+          setAttributes = _ref.setAttributes;
+
+      var handleAddItem = function handleAddItem() {
+        var items = _toConsumableArray(attributes.items);
+
         items.push({
           title: '',
           caption: ''
         });
         setAttributes({
-          items
+          items: items
         });
       };
 
-      const handleRemoveItem = index => {
-        const items = [...attributes.items];
+      var handleRemoveItem = function handleRemoveItem(index) {
+        var items = _toConsumableArray(attributes.items);
+
         items.splice(index, 1);
         setAttributes({
-          items
+          items: items
         });
       };
 
-      const handleItemChange = (index, value, type) => {
-        const items = [...attributes.items];
-
-        if (type == "img") {
-          value = value.sizes.full.url;
-        }
+      var handleItemChange = function handleItemChange(index, value, type) {
+        var items = _toConsumableArray(attributes.items);
 
         items[index][type] = value;
         setAttributes({
-          items
+          items: items
         });
       };
 
-      let itemFields;
+      var itemFields;
 
       if (attributes.items.length) {
-        itemFields = attributes.items.map((item, index) => {
+        itemFields = attributes.items.map(function (item, index) {
           return React.createElement("div", {
             className: "editor_item"
           }, React.createElement("label", {
             className: "editor_label"
           }, "Title"), React.createElement(RichText, {
             value: item.title,
-            onChange: value => handleItemChange(index, value, "title")
+            onChange: function onChange(value) {
+              return handleItemChange(index, value, 'title');
+            }
           }), React.createElement("label", {
             className: "editor_label"
           }, "Caption"), React.createElement(RichText, {
             value: item.caption,
-            onChange: value => handleItemChange(index, value, "caption")
+            onChange: function onChange(value) {
+              return handleItemChange(index, value, 'caption');
+            }
           }), React.createElement(Button, {
             className: "editor_button",
             isDefault: true,
-            onClick: () => handleRemoveItem(index)
+            onClick: function onClick() {
+              return handleRemoveItem(index);
+            }
           }, "Remove Item"));
         });
       }
@@ -88,8 +96,9 @@
         onClick: handleAddItem
       }, "Add Item"))];
     },
-    save: props => {
-      const items = props.attributes.items.map((item, index) => {
+    save: function save(_ref2) {
+      var attributes = _ref2.attributes;
+      var items = attributes.items.map(function (item) {
         return React.createElement("li", {
           className: "accordion"
         }, React.createElement("button", {

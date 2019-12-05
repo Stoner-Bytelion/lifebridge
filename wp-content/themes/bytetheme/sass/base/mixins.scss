@@ -73,3 +73,16 @@
 	overflow: hidden;
 	padding: 0;
 }
+
+@mixin divider($color: rgba($green, .5)) {
+
+	&:after {
+		height: 5px;
+		max-width: 150px;
+		width: 100%;
+
+		background: $color;
+		content: "";
+		display: block;
+	}
+}

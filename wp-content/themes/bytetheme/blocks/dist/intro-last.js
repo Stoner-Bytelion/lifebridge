@@ -8,8 +8,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       MediaUploadCheck = _wp$blockEditor.MediaUploadCheck,
       MediaUpload = _wp$blockEditor.MediaUpload,
       RichText = _wp$blockEditor.RichText;
-  registerBlockType('bytetheme/intro-first', {
-    title: 'Intro First',
+  registerBlockType('bytetheme/intro-last', {
+    title: 'Intro Last',
     icon: 'shield',
     category: 'custom',
     attributes: {
@@ -39,9 +39,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         className: "editor_wrapper"
       }, React.createElement("h2", {
         className: "editor_title"
-      }, "Intro First"), React.createElement("div", {
+      }, "Intro Last"), React.createElement("div", {
         className: "editor_item"
-      }, React.createElement("label", {
+      }, React.createElement(MediaUploadCheck, null, React.createElement(MediaUpload, {
+        onSelect: function onSelect(value) {
+          return handleSingleChange(value, 'image');
+        },
+        allowedTypes: ['image'],
+        render: function render(_ref2) {
+          var open = _ref2.open;
+          return React.createElement("img", {
+            src: typeof attributes.image != 'string' ? attributes.image.sizes.full.url : attributes.image,
+            onClick: open
+          });
+        }
+      })), React.createElement("label", {
         className: "editor_label"
       }, "title"), React.createElement(RichText, {
         value: attributes.title,
@@ -55,50 +67,38 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         onChange: function onChange(value) {
           return handleSingleChange(value, 'caption');
         }
-      }), React.createElement(MediaUploadCheck, null, React.createElement(MediaUpload, {
-        onSelect: function onSelect(value) {
-          return handleSingleChange(value, 'image');
-        },
-        allowedTypes: ['image'],
-        render: function render(_ref2) {
-          var open = _ref2.open;
-          return React.createElement("img", {
-            src: typeof attributes.image != 'string' ? attributes.image.sizes.full.url : attributes.image,
-            onClick: open
-          });
-        }
-      }))));
+      })));
     },
     save: function save(_ref3) {
       var attributes = _ref3.attributes;
       return React.createElement("div", {
-        className: "intro_first"
+        className: "intro_last"
       }, React.createElement("div", {
-        className: "intro_first_inner"
+        className: "intro_last_inner"
       }, React.createElement("div", {
-        className: "intro_first_body"
-      }, React.createElement("div", {
-        className: "intro_first_content"
-      }, React.createElement(RichText.Content, {
-        className: "intro_first_title",
-        tagName: "h2",
-        value: attributes.title
-      }), React.createElement(RichText.Content, {
-        className: "intro_first_caption",
-        tagName: "p",
-        value: attributes.caption
-      }))), React.createElement("figure", {
-        className: "intro_first_figure"
+        className: "intro_last_row"
+      }, React.createElement("figure", {
+        className: "intro_last_figure"
       }, typeof attributes.image == 'string' ? React.createElement("img", {
-        className: "intro_first_image",
+        className: "intro_last_image",
         src: attributes.image,
         alt: ""
       }) : React.createElement("img", {
-        className: "intro_first_image",
+        className: "intro_last_image",
         srcset: attributes.image.sizes.medium.url + ' 300w,' + attributes.image.sizes.full.url + ' 980w',
         src: attributes.image.sizes.thumbnail.url,
         alt: attributes.image.alt
-      }))));
+      })), React.createElement("div", {
+        className: "intro_last_body"
+      }, React.createElement(RichText.Content, {
+        className: "intro_last_title",
+        tagName: "h2",
+        value: attributes.title
+      }), React.createElement(RichText.Content, {
+        className: "intro_last_caption",
+        tagName: "p",
+        value: attributes.caption
+      })))));
     }
   });
 })();

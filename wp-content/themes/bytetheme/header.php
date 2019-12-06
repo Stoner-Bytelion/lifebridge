@@ -28,7 +28,7 @@
                             );
                         ?>
                         <a class="page_header_link" href="https://nextbigthinginhealthcare.com/#contact">
-                            <span class="page_header_link_label">Get Involved</span>
+                            <span class="page_header_link_label">Apply Now</span>
                             <span class="page_header_link_icon"><?php icon('arrow_right'); ?></span>
                         </a>
                     </div>

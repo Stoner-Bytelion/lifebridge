@@ -1,0 +1,53 @@
+.quotes_block {
+    background: $navy;
+}
+
+.quotes_block_inner {
+    @include bubble(true);
+    @include row;
+}
+
+.quotes_block_header {}
+
+.quotes_block_title {
+    @include h2;
+    @include divider;
+
+    color: #fff;
+    text-align: center;
+
+    &:after {
+        margin: 12px auto 0;
+    }
+}
+
+.quotes {}
+
+.quote {
+    background: #fff;
+}
+
+.quote_figure {
+    margin: 0;
+}
+
+.logo_callout_image {}
+
+.quote_caption {
+    padding: 20px;
+}
+
+.quote_text {
+    color: #4B4B4B;
+    font-family: 'Muli', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: (40 / 16);
+    margin: 0;
+}
+
+.quote_author {
+    color: $green;
+    display: block;
+    font-weight: 700;
+}

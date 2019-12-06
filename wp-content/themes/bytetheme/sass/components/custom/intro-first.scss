@@ -1,13 +1,66 @@
 .intro_first {}
 
-.intro_first_inner {}
+.intro_first_inner {
+    position: relative;
+}
 
-.intro_first_content {}
+.intro_first_body {
+    @include bubble(true);
+    @include row;
+}
 
-.intro_first_title {}
+.intro_first_content {
 
-.intro_first_caption {}
+    @media #{$min_md} {
+        width: 50%;
 
-.intro_first_figure {}
+        padding-right: 35px;
+    }
 
-.intro_first_image {}
+    @media #{$min_xl} {
+        padding-right: 70px;
+    }
+}
+
+.intro_first_title {
+    @include h2;
+    @include divider;
+
+    color: $blacky;
+    margin: 0 0 14px;
+
+    &:after {
+        margin-top: 6px;
+    }
+}
+
+.intro_first_caption {
+    @include body_text;
+
+    margin: 0;
+}
+
+.intro_first_figure {
+    margin: 0;
+
+    @media #{$min_md} {
+        height: 100%;
+        width: 50%;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+.intro_first_image {
+    width: 100%;
+
+    display: block;
+
+    @media #{$min_md} {
+        @include cover;
+
+        object-fit: cover;
+    }
+}

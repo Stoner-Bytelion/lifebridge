@@ -1,5 +1,9 @@
             <footer class="page_footer">
                 <div class="page_footer_inner">
+                    <a class="page_header_link" href="https://nextbigthinginhealthcare.com/#contact">
+                        <span class="page_header_link_label">Stay Connected</span>
+                        <span class="page_header_link_icon"><?php icon('arrow_right'); ?></span>
+                    </a>
                     <div class="credit">
                         <p>Serving Maryland, the District of Columbia and portions of Virginia, CareFirst BlueCross BlueShield is the shared business name of CareFirst of Maryland, Inc. and Group Hospitalization and Medical Services, Inc. In the District of Columbia and Maryland, CareFirst MedPlus is the business name of First Care, Inc. In Virginia, CareFirst MedPlus is the business name of First Care, Inc. of Maryland (Used in VA by: First Care, Inc.). First Care, Inc., CareFirst of Maryland, Inc., Group Hospitalization and Medical Services, Inc., CareFirst BlueChoice, Inc. and The Dental Network are independent licensees of the Blue Cross and Blue Shield Association. The Blue Cross® and Blue Shield® and the Cross and Shield Symbols are registered service marks of the Blue Cross and Blue Shield Association, an association of independent Blue Cross and Blue Shield Plans.</p>
                         <p>CareFirst of Maryland, Inc. and The Dental Network underwrite products in Maryland only.</p>

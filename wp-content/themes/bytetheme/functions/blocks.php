@@ -12,9 +12,12 @@
 			'cover',
 			'gallery',
 			'intro-first',
+			'intro-last',
 			'news',
 			'link-group',
+			'logo-callout',
 			'topic-row',
+			'quotes',
 		);
 
 		foreach ($blocks as $block) {

@@ -1,0 +1,83 @@
+.logo_callout {
+    background: $navy;
+    color: #fff;
+}
+
+.logo_callout_inner {
+    @include bubble(true);
+    @include row;
+
+    @media #{$min_md} {
+        display: flex;
+    }
+}
+
+.logo_callout_figure {
+    margin: 0;
+
+    @media #{$min_md} {
+        padding: 30px 0;
+    }
+
+    @media #{$min_xl} {
+        padding: 70px 0;
+    }
+
+    &:first-child {
+        margin-bottom: 40px;
+
+        @media #{$min_md} {
+            margin-bottom: 0;
+            padding-right: 30px;
+        }
+
+        @media #{$min_lg} {
+            padding-right: 80px;
+        }
+
+        @media #{$min_xxl} {
+            padding-right: 150px;
+        }
+    }
+
+    &:last-child {
+
+        @media #{$min_md} {
+            padding-left: 30px;
+        }
+
+        @media #{$min_lg} {
+            padding-left: 80px;
+        }
+
+        @media #{$min_xxl} {
+            padding-left: 150px;
+        }
+    }
+}
+
+.logo_callout_image {
+    width: 100%;
+
+    display: block;
+    margin-bottom: 15px;
+
+    @media #{$min_md} {
+        min-height: 58px;
+
+        margin-bottom: 25px;
+        object-fit: contain;
+    }
+
+    .logo_callout_figure:first-child & {
+        max-width: 300px;
+    }
+
+    .logo_callout_figure:last-child & {
+        max-width: 415px;
+    }
+}
+
+.logo_callout_caption {
+    @include body_text;
+}

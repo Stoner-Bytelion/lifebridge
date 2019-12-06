@@ -6,8 +6,8 @@
         RichText
     } = wp.blockEditor;
 
-    registerBlockType('bytetheme/intro-first', {
-        title: 'Intro First',
+    registerBlockType('bytetheme/intro-last', {
+        title: 'Intro Last',
         icon: 'shield',
         category: 'custom',
         attributes: {
@@ -34,17 +34,8 @@
 
             return (
                 <div className="editor_wrapper">
-                    <h2 className="editor_title">Intro First</h2>
+                    <h2 className="editor_title">Intro Last</h2>
                     <div className="editor_item">
-                        <label className="editor_label">title</label>
-                        <RichText
-                            value={ attributes.title }
-                            onChange={ (value) => handleSingleChange(value, 'title') }
-                        /><label className="editor_label">caption</label>
-                        <RichText
-                            value={ attributes.caption }
-                            onChange={ (value) => handleSingleChange(value, 'caption') }
-                        />
                         <MediaUploadCheck>
                             <MediaUpload
                                 onSelect={ (value) => handleSingleChange(value, 'image') }
@@ -54,43 +45,52 @@
                                 } }
                             />
                         </MediaUploadCheck>
+                        <label className="editor_label">title</label>
+                        <RichText
+                            value={ attributes.title }
+                            onChange={ (value) => handleSingleChange(value, 'title') }
+                        /><label className="editor_label">caption</label>
+                        <RichText
+                            value={ attributes.caption }
+                            onChange={ (value) => handleSingleChange(value, 'caption') }
+                        />
                     </div>
                 </div>
             );
         },
         save: ({ attributes }) => {
             return (
-                <div className="intro_first">
-                    <div className="intro_first_inner">
-                        <div className="intro_first_body">
-                            <div className="intro_first_content">
+                <div className="intro_last">
+                    <div className="intro_last_inner">
+                        <div className="intro_last_row">
+                            <figure className="intro_last_figure">
+                                {
+                                    typeof attributes.image == 'string' ?
+                                    <img className="intro_last_image" src={ attributes.image } alt="" /> :
+                                    <img
+                                        className="intro_last_image"
+                                        srcset={
+                                            attributes.image.sizes.medium.url + ' 300w,' +
+                                            attributes.image.sizes.full.url + ' 980w'
+                                        }
+                                        src={ attributes.image.sizes.thumbnail.url }
+                                        alt={ attributes.image.alt }
+                                    />
+                                }
+                            </figure>
+                            <div className="intro_last_body">
                                 <RichText.Content
-                                    className="intro_first_title"
+                                    className="intro_last_title"
                                     tagName="h2"
                                     value={ attributes.title }
                                 />
                                 <RichText.Content
-                                    className="intro_first_caption"
+                                    className="intro_last_caption"
                                     tagName="p"
                                     value={ attributes.caption }
                                 />
                             </div>
                         </div>
-                        <figure className="intro_first_figure">
-                            {
-                                typeof attributes.image == 'string' ?
-                                <img className="intro_first_image" src={ attributes.image } alt="" /> :
-                                <img
-                                    className="intro_first_image"
-                                    srcset={
-                                        attributes.image.sizes.medium.url + ' 300w,' +
-                                        attributes.image.sizes.full.url + ' 980w'
-                                    }
-                                    src={ attributes.image.sizes.thumbnail.url }
-                                    alt={ attributes.image.alt }
-                                />
-                            }
-                        </figure>
                     </div>
                 </div>
             );

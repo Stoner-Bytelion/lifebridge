@@ -1,15 +1,38 @@
 .gallery {
 	@include space(true);
+
+	overflow: hidden;
 }
 
 .gallery_inner {
 	@include row;
 }
 
+.gallery_header {
+	margin-bottom: 68px;
+	text-align: center;
+}
+
+.gallery_title {
+	@include h2;
+	@include divider;
+
+	color: $blacky;
+	margin: 0 0 54px;
+
+	&:after {
+		margin: 12px auto 0;
+	}
+}
+
+.gallery_caption {
+	@include body_text;
+
+	margin: 0;
+}
+
 .gallery_items {
 	position: relative;
-
-	overflow: hidden;
 
 	.slick-list {
 		margin: 0 -10px;

@@ -4,7 +4,8 @@
 	const {
 		MediaUploadCheck,
 		MediaUpload,
-		RichText
+		RichText,
+        URLInputButton
 	} = wp.blockEditor;
 
 	registerBlockType('bytetheme/gallery', {
@@ -12,16 +13,25 @@
 		icon: 'shield',
 		category: 'custom',
 		attributes: {
+			title: {
+                type: 'string'
+			},
+            caption: {
+                type: 'string'
+            },
 			items: {
 				type: 'array',
 				default: []
-			}
+			},
+			url: {
+                type: 'string'
+            }
 		},
 		edit: ({ attributes, setAttributes }) => {
 			const handleAddItem = () => {
 				const items = [...attributes.items];
 				items.push({
-					img: 'http://placehold.it/980x552',
+					img: 'http://placehold.it/380x380',
 					caption: ''
 				});
 				setAttributes({ items });
@@ -39,6 +49,14 @@
 				setAttributes({ items });
 			};
 
+			const handleSingleChange = (value, type) => {
+                const change = {
+                    [type]: value
+                };
+
+                setAttributes(change);
+            };
+
 			let itemFields;
 
 			if (attributes.items.length) {
@@ -54,11 +72,6 @@
 									} }
 								/>
 							</MediaUploadCheck>
-							<label className="editor_label">Caption</label>
-							<RichText
-								value={ item.caption }
-								onChange={ (value) => handleItemChange(index, value, 'caption') }
-							/>
 							<Button
 								className="editor_button"
 								isDefault
@@ -72,7 +85,22 @@
 			return [
 				<div className="editor_wrapper">
 					<h2 className="editor_title">Gallery Carousel</h2>
+					<label className="editor_label">Title</label>
+					<RichText
+						value={ attributes.title }
+						onChange={ (value) => handleSingleChange(value, 'title') }
+					/>
+					<label className="editor_label">Caption</label>
+					<RichText
+						value={ attributes.caption }
+						onChange={ (value) => handleSingleChange(value, 'caption') }
+					/>
 					{ itemFields }
+					<label className="editor_label">Learn More Link</label>
+					<URLInputButton
+						url={ attributes.url }
+						onChange={ (value) => handleSingleChange(value, "url") }
+					/>
 					<Button
 						className="editor_button"
 						isDefault
@@ -84,37 +112,40 @@
 		save: ({ attributes }) => {
 			const items = attributes.items.map((item, index) => {
 				return (
-					<div className="gallery_item">
+					<div className="gallery_item" data-index={ index }>
 						<figure className="gallery_figure" aria-hidden="true">
 							{
 								typeof item.img == 'string' ?
 								<img className="gallery_image" src={ item.img } alt="" /> :
 								<img
 									className="gallery_image"
+									src={ item.img.sizes.medium.url }
+									alt={ item.img.alt }
+								/>
+							}
+						</figure>
+					</div>
+				);
+			});
+
+			const boxes = attributes.items.map((item, index) => {
+				return (
+					<div className="gallery_box_item" data-index={ index }>
+						<figure className="gallery_box_figure" aria-hidden="true">
+							{
+								typeof item.img == 'string' ?
+								<img className="gallery_box_image" src={ item.img } alt="" /> :
+								<img
+									className="gallery_box_image"
 									srcset={
 										item.img.sizes.medium.url + ' 300w,' +
 										item.img.sizes.large.url + ' 740w,' +
 										item.img.sizes.full.url + ' 980w'
 									}
-									src={ item.img.sizes.thumbnail.url }
+									src={ item.img.sizes.medium.url }
 									alt={ item.img.alt }
 								/>
 							}
-							<figcaption class="gallery_details">
-								<span class="gallery_index">
-									<span class="gallery_index_number">{ index + 1 }</span>
-									<span class="gallery_index_label"> of </span>
-									<span class="gallery_index_number">{ attributes.items.length }</span>
-								</span>
-								{
-									item.caption.length > 0 &&
-									<RichText.Content
-										className="gallery_item_caption"
-										tagName="p"
-										value={ item.caption }
-									/>
-								}
-							</figcaption>
 						</figure>
 					</div>
 				);
@@ -123,8 +154,24 @@
 			return (
 				<div className="gallery">
 					<div className="gallery_inner">
+						<div className="gallery_header">
+							<RichText.Content
+								className="gallery_title"
+								tagName="h2"
+								value={ attributes.title }
+							/>
+							<RichText.Content
+								className="gallery_caption"
+								tagName="p"
+								value={ attributes.caption }
+							/>
+						</div>
 						<div className="gallery_items">
 							{ items }
+						</div>
+						<div className="gallery_box_items">
+							{ boxes }
+							<button className="gallery_box_close">Close</button>
 						</div>
 					</div>
 				</div>

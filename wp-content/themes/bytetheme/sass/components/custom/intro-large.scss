@@ -1,0 +1,15 @@
+.intro_large {
+    @include space(true);
+    @include row;
+}
+
+.intro_large_caption {
+    @include h3;
+
+    color: $blacky;
+    text-align: center;
+
+    @media #{$min_lg} {
+        line-height: (54 / 36);
+    }
+}

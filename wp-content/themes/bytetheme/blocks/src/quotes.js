@@ -136,9 +136,9 @@
                                 <figure className="quote_figure">
                                     {
                                         typeof attributes.leftImage == 'string' ?
-                                        <img className="logo_callout_image" src={ attributes.leftImage } alt="" /> :
+                                        <img className="quote_image" src={ attributes.leftImage } alt="" /> :
                                         <img
-                                            className="logo_callout_image"
+                                            className="quote_image"
                                             srcset={
                                                 attributes.leftImage.sizes.medium.url + ' 300w,' +
                                                 attributes.leftImage.sizes.full.url + ' 980w'
@@ -157,9 +157,9 @@
                                 <figure className="quote_figure">
                                     {
                                         typeof attributes.rightImage == 'string' ?
-                                        <img className="logo_callout_image" src={ attributes.rightImage } alt="" /> :
+                                        <img className="quote_image" src={ attributes.rightImage } alt="" /> :
                                         <img
-                                            className="logo_callout_image"
+                                            className="quote_image"
                                             srcset={
                                                 attributes.rightImage.sizes.medium.url + ' 300w,' +
                                                 attributes.rightImage.sizes.full.url + ' 980w'

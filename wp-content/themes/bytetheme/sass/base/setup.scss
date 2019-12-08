@@ -4,7 +4,7 @@ $mq_min_sm: 500;
 $mq_min_md: 760;
 $mq_min_lg: 980;
 $mq_min_xl: 1280;
-$mq_min_xxl: 1600;
+$mq_min_xxl: 1640;
 
 $min_xs: "(min-width:" + ($mq_min_xs * 1px) + ")";
 $min_sm: "(min-width:" + ($mq_min_sm * 1px) + ")";
@@ -31,4 +31,5 @@ $dark: #1F1F1F;
 $navy: #053E77;
 $blue: #4FC1E3;
 $green: #009681;
+$mint: #40C1AC;
 $orange: #FC6F20;

@@ -1,3 +1,20 @@
+.slick-slider {
+	padding-bottom: 40px;
+}
+
+.slick-list {
+	overflow: visible;
+}
+
+.slick-slide {
+	opacity: 0;
+	transition: opacity .5s;
+
+	&.slick-active {
+		opacity: 1;
+	}
+}
+
 .slick-arrow {
 	height: 50px;
 	width: 50px;

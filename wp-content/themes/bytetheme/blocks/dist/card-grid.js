@@ -18,23 +18,17 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       MediaUpload = _wp$blockEditor.MediaUpload,
       RichText = _wp$blockEditor.RichText,
       URLInputButton = _wp$blockEditor.URLInputButton;
-  registerBlockType('bytetheme/gallery', {
-    title: 'Gallery Carousel',
+  registerBlockType('bytetheme/card-grid', {
+    title: 'Card Grid',
     icon: 'shield',
     category: 'custom',
     attributes: {
-      title: {
-        type: 'string'
+      "title": {
+        "type": "string"
       },
-      caption: {
-        type: 'string'
-      },
-      items: {
-        type: 'array',
+      "items": {
+        "type": "array",
         "default": []
-      },
-      url: {
-        type: 'string'
       }
     },
     edit: function edit(_ref) {
@@ -45,7 +39,8 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         var items = _toConsumableArray(attributes.items);
 
         items.push({
-          img: 'http://placehold.it/380x380',
+          img: 'http://placehold.it/500x282',
+          title: '',
           caption: ''
         });
         setAttributes({
@@ -95,7 +90,21 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
                 onClick: open
               });
             }
-          })), React.createElement(Button, {
+          })), React.createElement("label", {
+            className: "editor_label"
+          }, "title"), React.createElement(RichText, {
+            value: item.title,
+            onChange: function onChange(value) {
+              return handleItemChange(index, value, 'title');
+            }
+          }), React.createElement("label", {
+            className: "editor_label"
+          }, "caption"), React.createElement(RichText, {
+            value: item.caption,
+            onChange: function onChange(value) {
+              return handleItemChange(index, value, "caption");
+            }
+          }), React.createElement(Button, {
             className: "editor_button",
             isDefault: true,
             onClick: function onClick() {
@@ -109,28 +118,14 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         className: "editor_wrapper"
       }, React.createElement("h2", {
         className: "editor_title"
-      }, "Gallery Carousel"), React.createElement("label", {
+      }, "Card Grid"), React.createElement("label", {
         className: "editor_label"
-      }, "Title"), React.createElement(RichText, {
+      }, "title"), React.createElement(RichText, {
         value: attributes.title,
         onChange: function onChange(value) {
           return handleSingleChange(value, 'title');
         }
-      }), React.createElement("label", {
-        className: "editor_label"
-      }, "Caption"), React.createElement(RichText, {
-        value: attributes.caption,
-        onChange: function onChange(value) {
-          return handleSingleChange(value, 'caption');
-        }
-      }), itemFields, React.createElement("label", {
-        className: "editor_label"
-      }, "Learn More Link"), React.createElement(URLInputButton, {
-        url: attributes.url,
-        onChange: function onChange(value) {
-          return handleSingleChange(value, "url");
-        }
-      }), React.createElement(Button, {
+      }), itemFields, React.createElement(Button, {
         className: "editor_button",
         isDefault: true,
         onClick: handleAddItem
@@ -138,62 +133,39 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     },
     save: function save(_ref3) {
       var attributes = _ref3.attributes;
-      var items = attributes.items.map(function (item, index) {
+      var items = attributes.items.map(function (item) {
         return React.createElement("div", {
-          className: "gallery_item",
-          "data-index": index
+          className: "card_grid_item"
         }, React.createElement("figure", {
-          className: "gallery_figure",
+          className: "card_grid_item_figure",
           "aria-hidden": "true"
         }, typeof item.img == 'string' ? React.createElement("img", {
-          className: "gallery_image",
+          className: "card_grid_item_image",
           src: item.img,
           alt: ""
         }) : React.createElement("img", {
-          className: "gallery_image",
-          src: item.img.sizes.medium.url,
+          className: "card_grid_item_image",
+          src: item.img.sizes.full.url,
           alt: item.img.alt
-        })));
-      });
-      var boxes = attributes.items.map(function (item, index) {
-        return React.createElement("div", {
-          className: "gallery_box_item",
-          "data-index": index
-        }, React.createElement("figure", {
-          className: "gallery_box_figure",
-          "aria-hidden": "true"
-        }, typeof item.img == 'string' ? React.createElement("img", {
-          className: "gallery_box_image",
-          src: item.img,
-          alt: ""
-        }) : React.createElement("img", {
-          className: "gallery_box_image",
-          srcset: item.img.sizes.medium.url + ' 300w,' + item.img.sizes.large.url + ' 740w,' + item.img.sizes.full.url + ' 980w',
-          src: item.img.sizes.medium.url,
-          alt: item.img.alt
-        })));
+        }), React.createElement("figcaption", {
+          className: "card_grid_item_caption"
+        }, React.createElement("div", {
+          className: "card_grid_item_title"
+        }, item.title), React.createElement("p", {
+          className: "card_grid_item_text"
+        }, item.caption))));
       });
       return React.createElement("div", {
-        className: "gallery"
+        className: "card_grid"
       }, React.createElement("div", {
-        className: "gallery_inner"
+        className: "card_grid_inner"
       }, React.createElement("div", {
-        className: "gallery_header"
-      }, React.createElement(RichText.Content, {
-        className: "gallery_title",
-        tagName: "h2",
-        value: attributes.title
-      }), React.createElement(RichText.Content, {
-        className: "gallery_caption",
-        tagName: "p",
-        value: attributes.caption
-      })), React.createElement("div", {
-        className: "gallery_items"
-      }, items), React.createElement("div", {
-        className: "gallery_box_items"
-      }, boxes, React.createElement("button", {
-        className: "gallery_box_close"
-      }, "Close"))));
+        className: "card_grid_items"
+      }, React.createElement("div", {
+        className: "card_grid_item"
+      }, React.createElement("h2", {
+        className: "card_grid_item_intro"
+      }, attributes.title)), items)));
     }
   });
 })();

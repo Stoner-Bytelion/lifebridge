@@ -18,23 +18,25 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       MediaUpload = _wp$blockEditor.MediaUpload,
       RichText = _wp$blockEditor.RichText,
       URLInputButton = _wp$blockEditor.URLInputButton;
-  registerBlockType('bytetheme/gallery', {
-    title: 'Gallery Carousel',
+  registerBlockType('bytetheme/intro-callout', {
+    title: 'Intro Callout',
     icon: 'shield',
     category: 'custom',
     attributes: {
-      title: {
-        type: 'string'
+      "title": {
+        "type": "string"
       },
-      caption: {
-        type: 'string'
+      "caption": {
+        "type": "string"
       },
-      items: {
-        type: 'array',
+      "items": {
+        "type": 'array',
         "default": []
       },
-      url: {
-        type: 'string'
+      "image": {
+        "type": "object",
+        "default": "http://placehold.it/960",
+        "selector": "img"
       }
     },
     edit: function edit(_ref) {
@@ -45,8 +47,8 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         var items = _toConsumableArray(attributes.items);
 
         items.push({
-          img: 'http://placehold.it/380x380',
-          caption: ''
+          label: '',
+          url: ''
         });
         setAttributes({
           items: items
@@ -83,19 +85,19 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         itemFields = attributes.items.map(function (item, index) {
           return React.createElement("div", {
             className: "editor_item"
-          }, React.createElement(MediaUploadCheck, null, React.createElement(MediaUpload, {
-            onSelect: function onSelect(value) {
-              return handleItemChange(index, value, 'img');
-            },
-            allowedTypes: ['image'],
-            render: function render(_ref2) {
-              var open = _ref2.open;
-              return React.createElement("img", {
-                src: typeof item.img == 'string' ? item.img : item.img.sizes.full.url,
-                onClick: open
-              });
+          }, React.createElement("label", {
+            className: "editor_label"
+          }, "Button Label"), React.createElement(RichText, {
+            value: item.label,
+            onChange: function onChange(value) {
+              return handleItemChange(index, value, 'label');
             }
-          })), React.createElement(Button, {
+          }), React.createElement(URLInputButton, {
+            url: item.url,
+            onChange: function onChange(value) {
+              return handleItemChange(index, value, "url");
+            }
+          }), React.createElement(Button, {
             className: "editor_button",
             isDefault: true,
             onClick: function onClick() {
@@ -105,95 +107,94 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         });
       }
 
-      return [React.createElement("div", {
+      return React.createElement("div", {
         className: "editor_wrapper"
       }, React.createElement("h2", {
         className: "editor_title"
-      }, "Gallery Carousel"), React.createElement("label", {
+      }, "Intro Callout"), React.createElement("label", {
         className: "editor_label"
-      }, "Title"), React.createElement(RichText, {
+      }, "title"), React.createElement(RichText, {
         value: attributes.title,
         onChange: function onChange(value) {
           return handleSingleChange(value, 'title');
         }
       }), React.createElement("label", {
         className: "editor_label"
-      }, "Caption"), React.createElement(RichText, {
+      }, "caption"), React.createElement(RichText, {
         value: attributes.caption,
         onChange: function onChange(value) {
           return handleSingleChange(value, 'caption');
         }
-      }), itemFields, React.createElement("label", {
-        className: "editor_label"
-      }, "Learn More Link"), React.createElement(URLInputButton, {
-        url: attributes.url,
-        onChange: function onChange(value) {
-          return handleSingleChange(value, "url");
-        }
-      }), React.createElement(Button, {
+      }), itemFields, React.createElement(Button, {
         className: "editor_button",
         isDefault: true,
         onClick: handleAddItem
-      }, "Add Item"))];
+      }, "Add Item"), React.createElement(MediaUploadCheck, null, React.createElement(MediaUpload, {
+        onSelect: function onSelect(value) {
+          return handleSingleChange(value, 'image');
+        },
+        allowedTypes: ['image'],
+        render: function render(_ref2) {
+          var open = _ref2.open;
+          return React.createElement("img", {
+            src: typeof attributes.image != 'string' ? attributes.image.sizes.full.url : attributes.image,
+            onClick: open
+          });
+        }
+      })));
     },
     save: function save(_ref3) {
       var attributes = _ref3.attributes;
       var items = attributes.items.map(function (item, index) {
-        return React.createElement("div", {
-          className: "gallery_item",
-          "data-index": index
-        }, React.createElement("figure", {
-          className: "gallery_figure",
-          "aria-hidden": "true"
-        }, typeof item.img == 'string' ? React.createElement("img", {
-          className: "gallery_image",
-          src: item.img,
-          alt: ""
-        }) : React.createElement("img", {
-          className: "gallery_image",
-          src: item.img.sizes.medium.url,
-          alt: item.img.alt
-        })));
-      });
-      var boxes = attributes.items.map(function (item, index) {
-        return React.createElement("div", {
-          className: "gallery_box_item",
-          "data-index": index
-        }, React.createElement("figure", {
-          className: "gallery_box_figure",
-          "aria-hidden": "true"
-        }, typeof item.img == 'string' ? React.createElement("img", {
-          className: "gallery_box_image",
-          src: item.img,
-          alt: ""
-        }) : React.createElement("img", {
-          className: "gallery_box_image",
-          srcset: item.img.sizes.medium.url + ' 300w,' + item.img.sizes.large.url + ' 740w,' + item.img.sizes.full.url + ' 980w',
-          src: item.img.sizes.medium.url,
-          alt: item.img.alt
-        })));
+        return React.createElement("a", {
+          className: "intro_callout_link",
+          href: item.url
+        }, React.createElement("span", {
+          className: "intro_callout_link_label"
+        }, item.label), React.createElement("span", {
+          className: "intro_callout_link_icon"
+        }, React.createElement("svg", {
+          version: "1.1",
+          xmlns: "http://www.w3.org/2000/svg",
+          width: "32",
+          height: "32",
+          viewBox: "0 0 32 32"
+        }, React.createElement("path", {
+          d: "M15.057 7.609l7.057 7.057h-15.448c-0.736 0-1.333 0.597-1.333 1.333s0.597 1.333 1.333 1.333h15.448l-7.057 7.057c-0.521 0.521-0.521 1.365 0 1.885s1.365 0.521 1.885 0l9.333-9.333c0.128-0.128 0.224-0.276 0.289-0.433 0.065-0.16 0.1-0.329 0.101-0.499 0.001-0.177-0.032-0.355-0.101-0.52-0.065-0.157-0.161-0.305-0.289-0.433l-9.333-9.333c-0.521-0.521-1.365-0.521-1.885 0s-0.521 1.365 0 1.885z"
+        }))));
       });
       return React.createElement("div", {
-        className: "gallery"
+        className: "intro_callout"
       }, React.createElement("div", {
-        className: "gallery_inner"
+        className: "intro_callout_inner"
       }, React.createElement("div", {
-        className: "gallery_header"
+        className: "intro_callout_row"
+      }, React.createElement("figure", {
+        className: "intro_callout_figure"
+      }, typeof attributes.image == 'string' ? React.createElement("img", {
+        className: "intro_callout_image",
+        src: attributes.image,
+        alt: ""
+      }) : React.createElement("img", {
+        className: "intro_callout_image",
+        srcset: attributes.image.sizes.medium.url + ' 300w,' + attributes.image.sizes.full.url + ' 980w',
+        src: attributes.image.sizes.thumbnail.url,
+        alt: attributes.image.alt
+      })), React.createElement("div", {
+        className: "intro_callout_body"
+      }, React.createElement("div", {
+        className: "intro_callout_content"
       }, React.createElement(RichText.Content, {
-        className: "gallery_title",
+        className: "intro_callout_title",
         tagName: "h2",
         value: attributes.title
       }), React.createElement(RichText.Content, {
-        className: "gallery_caption",
+        className: "intro_callout_caption",
         tagName: "p",
         value: attributes.caption
       })), React.createElement("div", {
-        className: "gallery_items"
-      }, items), React.createElement("div", {
-        className: "gallery_box_items"
-      }, boxes, React.createElement("button", {
-        className: "gallery_box_close"
-      }, "Close"))));
+        className: "intro_callout_links"
+      }, items)))));
     }
   });
 })();

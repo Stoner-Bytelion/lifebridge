@@ -1,0 +1,107 @@
+.intro_callout {
+    background: $navy;
+    color: #fff;
+}
+
+.intro_callout_inner {
+    @include bubble(true);
+    @include row();
+}
+
+.intro_callout_row {
+
+    @media #{$min_md} {
+        align-items: center;
+        display: flex;
+    }
+
+    @media #{$min_lg} {
+        padding: 55px 0;
+    }
+
+    @media #{$min_xxl} {
+        margin: 0 -80px;
+        padding: 85px 0;
+    }
+}
+
+.intro_callout_figure {
+    margin: 0 0 20px;
+
+    @media #{$min_md} {
+        width: 50%;
+
+        margin-bottom: 0;
+        order: 2;
+        padding-left: 20px;
+    }
+
+    @media #{$min_lg} {
+        padding-left: 50px;
+    }
+}
+
+.intro_callout_image {
+    width: 100%;
+
+    display: block;
+}
+
+.intro_callout_body {
+
+    @media #{$min_md} {
+        width: 50%;
+
+        padding-right: 20px;
+    }
+
+    @media #{$min_lg} {
+        padding-right: 50px;
+    }
+}
+
+.intro_callout_title {
+    @include h2;
+    @include divider;
+
+    margin: 0 0 14px;
+
+    &:after {
+        margin-top: 6px;
+    }
+}
+
+.intro_callout_caption {
+    @include body_text;
+
+    margin: 0;
+}
+
+.intro_callout_links {
+    margin-top: 30px;
+
+    @media #{$min_xxl} {
+        margin-top: 52px;
+    }
+}
+
+.intro_callout_link {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    @media #{$min_xxl} {
+        min-width: 210px;
+        margin-right: 60px;
+    }
+    
+    &:first-child {
+        @include button("alt");
+    }
+
+    &:last-child {
+        @include button();
+    }
+}

@@ -1,0 +1,38 @@
+.three_pair {}
+
+.three_pair_inner {
+    @include space;
+    @include row;
+}
+
+.three_pair_items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.three_pair_item {}
+
+.three_pair_item_title {
+    @include h4;
+
+    color: $mint;
+    margin: 0;
+}
+
+.three_pair_item_caption {
+    @include body_text;
+
+    margin: 0;
+}
+
+.three_pair_link {
+    @include button("alt");
+
+    align-items: center;
+	display: inline-flex;
+}
+
+.three_pair_link_label {}
+
+.three_pair_link_icon {}

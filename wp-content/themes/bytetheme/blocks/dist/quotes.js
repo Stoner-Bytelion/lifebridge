@@ -175,11 +175,11 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       }, React.createElement("figure", {
         className: "quote_figure"
       }, typeof attributes.leftImage == 'string' ? React.createElement("img", {
-        className: "logo_callout_image",
+        className: "quote_image",
         src: attributes.leftImage,
         alt: ""
       }) : React.createElement("img", {
-        className: "logo_callout_image",
+        className: "quote_image",
         srcset: attributes.leftImage.sizes.medium.url + ' 300w,' + attributes.leftImage.sizes.full.url + ' 980w',
         src: attributes.leftImage.sizes.thumbnail.url,
         alt: attributes.leftImage.alt
@@ -194,11 +194,11 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       }, React.createElement("figure", {
         className: "quote_figure"
       }, typeof attributes.rightImage == 'string' ? React.createElement("img", {
-        className: "logo_callout_image",
+        className: "quote_image",
         src: attributes.rightImage,
         alt: ""
       }) : React.createElement("img", {
-        className: "logo_callout_image",
+        className: "quote_image",
         srcset: attributes.rightImage.sizes.medium.url + ' 300w,' + attributes.rightImage.sizes.full.url + ' 980w',
         src: attributes.rightImage.sizes.thumbnail.url,
         alt: attributes.rightImage.alt

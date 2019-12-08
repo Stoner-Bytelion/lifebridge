@@ -7,13 +7,20 @@
     @include row;
 }
 
-.quotes_block_header {}
+.quotes_block_header {
+    margin-bottom: 35px;
+
+    @media #{$min_lg} {
+        margin-bottom: 65px;
+    }
+}
 
 .quotes_block_title {
     @include h2;
     @include divider;
 
     color: #fff;
+    margin: 0;
     text-align: center;
 
     &:after {
@@ -21,33 +28,139 @@
     }
 }
 
-.quotes {}
+.quotes {
+
+    @media #{$min_lg} {
+        display: flex;
+        margin: 0 -10px;
+    }
+}
 
 .quote {
     background: #fff;
+    margin: 0 0 40px;
+
+    @media #{$min_lg} {
+        width: calc(50% - 20px);
+
+        display: flex;
+        margin: 0 10px;
+    }
+
+    @media #{$min_xl} {
+        width: calc(50% - 60px);
+    }
+
+    &:first-child {
+
+        @media #{$min_xl} {
+            margin-right: 50px;
+        }
+    }
+
+    &:last-child {
+
+        @media #{$min_xl} {
+            margin-left: 50px;
+        }
+    }
 }
 
 .quote_figure {
     margin: 0;
+
+    @media #{$min_sm} {
+        display: flex;
+    }
 }
 
-.logo_callout_image {}
+.quote_image {
+    display: none;
+    margin: 0;
+
+    @media #{$min_sm} {
+        width: 205px;
+
+        display: block;
+    }
+
+    @media #{$min_lg} {
+        object-fit: cover;
+    }
+}
 
 .quote_caption {
+    position: relative;
+
     padding: 20px;
+
+    @media #{$min_sm} {
+        align-self: center;
+        display: flex;
+        flex: auto;
+        flex-direction: column;
+    }
+
+    &:after {
+
+        @media #{$min_sm} {
+            position: absolute;
+            top: 50%;
+            right: 100%;
+    
+            border: 10px solid transparent;
+            border-right-color: #fff;
+            content: "";
+            transform: translate(0, -50%);
+        }
+
+        @media #{$min_lg} {
+            border-width: 30px;
+        }
+    }
 }
 
 .quote_text {
     color: #4B4B4B;
     font-family: 'Muli', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
-    line-height: (40 / 16);
-    margin: 0;
+    line-height: (30 / 14);
+    margin: 0 0 22px;
+    text-align: center;
+
+    @media #{$min_md} {
+        font-size: 16px;
+        line-height: (40 / 16);
+    }
+
+    @media #{$min_lg} {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: (30 / 14);
+    }
+
+    @media #{$min_xl} {
+        font-size: 16px;
+        line-height: (40 / 16);
+    }
 }
 
 .quote_author {
     color: $green;
     display: block;
+    font-size: 14px;
     font-weight: 700;
+
+    @media #{$min_md} {
+        font-size: 16px;
+    }
+
+    @media #{$min_lg} {
+        font-size: 14px;
+    }
+
+    @media #{$min_xl} {
+        font-size: 16px;
+    }
 }

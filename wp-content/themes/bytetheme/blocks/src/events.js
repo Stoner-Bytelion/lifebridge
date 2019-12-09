@@ -2,8 +2,6 @@
     const { registerBlockType } = wp.blocks;
     const { Button } = wp.components;
     const {
-        MediaUploadCheck,
-        MediaUpload,
         RichText,
         URLInputButton
     } = wp.blockEditor;

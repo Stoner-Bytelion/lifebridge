@@ -1,6 +1,5 @@
 (function() {
     const { registerBlockType } = wp.blocks;
-    const { Button } = wp.components;
     const {
         MediaUploadCheck,
         MediaUpload,
@@ -27,32 +26,11 @@
             },
             "background": {
                 "type": "object",
-                "default": "http://placehold.it/500",
+                "default": "http://placehold.it/1400x700",
                 "selector": "img"
             }
         },
         edit: ({ attributes, setAttributes }) => {
-            const handleAddItem = () => {
-                const items = [...attributes.items];
-                items.push({
-                    img: 'http://placehold.it/500x282',
-                    caption: ''
-                });
-                setAttributes({ items });
-            };
-
-            const handleRemoveItem = (index) => {
-                const items = [...attributes.items];
-                items.splice(index, 1);
-                setAttributes({ items });
-            };
-
-            const handleItemChange = (index, value, type) => {
-                const items = [...attributes.items];
-                items[index][type] = value;
-                setAttributes({ items });
-            };
-
             const handleSingleChange = (value, type) => {
                 const change = {
                     [type]: value

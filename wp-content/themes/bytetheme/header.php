@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
-        <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <title><?php wp_title( '| Lifebridge Health', true, 'right' ); ?></title>
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>

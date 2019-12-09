@@ -16,8 +16,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   var _wp$blockEditor = wp.blockEditor,
       MediaUploadCheck = _wp$blockEditor.MediaUploadCheck,
       MediaUpload = _wp$blockEditor.MediaUpload,
-      RichText = _wp$blockEditor.RichText,
-      URLInputButton = _wp$blockEditor.URLInputButton;
+      RichText = _wp$blockEditor.RichText;
   registerBlockType('bytetheme/card-grid', {
     title: 'Card Grid',
     icon: 'shield',
@@ -39,7 +38,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         var items = _toConsumableArray(attributes.items);
 
         items.push({
-          img: 'http://placehold.it/500x282',
+          img: 'http://placehold.it/150',
           title: '',
           caption: ''
         });

@@ -1,0 +1,149 @@
+.facts_callout {}
+
+.facts_callout_inner {
+    position: relative;
+
+    @media #{$min_md} {
+        display: flex;
+    }
+}
+
+.facts_callout_body {
+    @include row;
+    @include bubble(true);
+}
+
+.facts_callout_content {
+
+    @media #{$min_md} {
+        width: 75%;
+    }
+}
+
+.facts_callout_header {
+    margin-bottom: 60px;
+}
+
+.facts_callout_title {
+    @include h2;
+    @include divider;
+    
+    color: $blacky;
+    margin: 0 0 30px;
+
+    @media #{$min_md} {
+        margin-bottom: 60px;
+    }
+
+    &:after {
+        margin-top: 12px;
+    }
+}
+
+.facts_callout_caption {
+    @include body_text($min_md);
+
+    margin: 0;
+
+    @media #{$min_md} {
+        line-height: (36 / 16);
+    }
+}
+
+.facts_callout_figure {
+    margin: 0;
+}
+
+.facts_callout_image {
+    max-width: 600px;
+    width: 100%;
+
+    display: block;
+    margin: 0 auto;
+}
+
+.facts_callout_figcaption {
+    @include body_text($min_md);
+
+    margin-top: 30px;
+
+    @media #{$min_md} {
+        line-height: (36 / 16);
+        margin-top: 60px;
+    }
+}
+
+.facts_callout_aside {
+    position: relative;
+
+    @media #{$min_md} {
+        height: 100%;
+        width: 25%;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    &:before {
+        @include cover;
+
+        z-index: 2;
+
+        background: rgba($navy, .8);
+        content: "";
+    }
+}
+
+.facts_callout_background {
+    @include cover;
+
+    display: block;
+    object-fit: cover;
+}
+
+.facts {
+    position: relative;
+    z-index: 4;
+
+    list-style: none;
+    margin: 0;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+.fact {
+    color: $green;
+    font-family: 'Muli', sans-serif;
+    font-weight: 600;
+    padding: 20px 0;
+
+    @media #{$min_md} {
+        padding: 40px 0;
+    }
+
+    @media #{$min_xl} {
+        padding: 75px 0;
+    }
+}
+
+.fact_quantity {
+    font-size: 34px;
+
+    @media #{$min_xl} {
+        font-size: 60px;
+    }
+}
+
+.fact_caption {
+    font-size: 18px;
+
+    @media #{$min_xl} {
+        font-size: 24px;
+        line-height: (36 / 24);
+    }
+}

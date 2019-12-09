@@ -19,7 +19,7 @@
             },
             "image": {
                 "type": "object",
-                "default": "http://placehold.it/960",
+                "default": "http://placehold.it/660x450",
                 "selector": "img"
             }
         },

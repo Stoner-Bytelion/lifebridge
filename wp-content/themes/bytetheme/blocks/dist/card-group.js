@@ -42,7 +42,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         var items = _toConsumableArray(attributes.items);
 
         items.push({
-          img: 'http://placehold.it/500x282',
+          img: 'http://placehold.it/150',
           caption: ''
         });
         setAttributes({

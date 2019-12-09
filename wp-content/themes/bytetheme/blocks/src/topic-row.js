@@ -4,8 +4,7 @@
     const {
         MediaUploadCheck,
         MediaUpload,
-        RichText,
-        URLInputButton
+        RichText
     } = wp.editor;
 
     registerBlockType('bytetheme/topic-row', {
@@ -22,7 +21,7 @@
             const handleAddItem = () => {
                 const items = [...attributes.items];
                 items.push({
-                    img: 'http://placehold.it/200',
+                    img: 'http://placehold.it/730x490',
                     title: '',
                     caption: '',
                     url: ''

@@ -11,6 +11,7 @@
 			'card-group',
 			'cover',
 			'events',
+			'facts-callout',
 			'gallery',
 			'intro-callout',
 			'intro-first',

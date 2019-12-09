@@ -4,8 +4,7 @@
     const {
         MediaUploadCheck,
         MediaUpload,
-        RichText,
-        URLInputButton
+        RichText
     } = wp.blockEditor;
 
     registerBlockType('bytetheme/card-grid', {
@@ -25,7 +24,7 @@
             const handleAddItem = () => {
                 const items = [...attributes.items];
                 items.push({
-                    img: 'http://placehold.it/500x282',
+                    img: 'http://placehold.it/150',
                     title: '',
                     caption: ''
                 });

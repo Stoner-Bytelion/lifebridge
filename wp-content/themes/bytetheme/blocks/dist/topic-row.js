@@ -14,8 +14,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   var _wp$editor = wp.editor,
       MediaUploadCheck = _wp$editor.MediaUploadCheck,
       MediaUpload = _wp$editor.MediaUpload,
-      RichText = _wp$editor.RichText,
-      URLInputButton = _wp$editor.URLInputButton;
+      RichText = _wp$editor.RichText;
   registerBlockType('bytetheme/topic-row', {
     title: 'Topic Row',
     icon: 'shield',
@@ -34,7 +33,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         var items = _toConsumableArray(attributes.items);
 
         items.push({
-          img: 'http://placehold.it/200',
+          img: 'http://placehold.it/730x490',
           title: '',
           caption: '',
           url: ''

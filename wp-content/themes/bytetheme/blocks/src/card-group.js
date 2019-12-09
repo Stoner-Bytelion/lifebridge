@@ -28,7 +28,7 @@
             const handleAddItem = () => {
                 const items = [...attributes.items];
                 items.push({
-                    img: 'http://placehold.it/500x282',
+                    img: 'http://placehold.it/150',
                     caption: ''
                 });
                 setAttributes({ items });

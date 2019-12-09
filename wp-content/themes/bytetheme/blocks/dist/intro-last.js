@@ -55,14 +55,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }
       })), React.createElement("label", {
         className: "editor_label"
-      }, "title"), React.createElement(RichText, {
+      }, "Title"), React.createElement(RichText, {
         value: attributes.title,
         onChange: function onChange(value) {
           return handleSingleChange(value, 'title');
         }
       }), React.createElement("label", {
         className: "editor_label"
-      }, "caption"), React.createElement(RichText, {
+      }, "Caption"), React.createElement(RichText, {
         value: attributes.caption,
         onChange: function onChange(value) {
           return handleSingleChange(value, 'caption');

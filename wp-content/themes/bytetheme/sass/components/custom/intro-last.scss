@@ -1,7 +1,8 @@
-.intro_last {}
+.intro_last {
+    @include space(true);
+}
 
 .intro_last_inner {
-    @include bubble(true);
     @include row();
 }
 
@@ -10,10 +11,6 @@
     @media #{$min_md} {
         align-items: center;
         display: flex;
-    }
-
-    @media #{$min_lg} {
-        padding: 55px 0;
     }
 }
 

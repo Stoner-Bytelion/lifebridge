@@ -67,12 +67,12 @@
 									} }
 								/>
 							</MediaUploadCheck>
-                            <label className="editor_label">title</label>
+                            <label className="editor_label">Title</label>
                             <RichText
                                 value={ item.title }
                                 onChange={ (value) => handleItemChange(index, value, 'title') }
                             />
-                            <label className="editor_label">caption</label>
+                            <label className="editor_label">Caption</label>
                             <RichText
                                 value={ item.caption }
                                 onChange={ (value) => handleItemChange(index, value, "caption") }
@@ -90,7 +90,7 @@
             return [
                 <div className="editor_wrapper">
                     <h2 className="editor_title">Card Grid</h2>
-                    <label className="editor_label">title</label>
+                    <label className="editor_label">Title</label>
                     <RichText
                         value={ attributes.title }
                         onChange={ (value) => handleSingleChange(value, 'title') }

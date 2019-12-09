@@ -5,12 +5,12 @@
 	*/
 	function register_theme_blocks() {
 		$blocks = array(
-			'accordion-block',
+			'background-callout',
 			'call-to-action',
 			'card-grid',
 			'card-group',
-			'contact',
 			'cover',
+			'events',
 			'gallery',
 			'intro-callout',
 			'intro-first',

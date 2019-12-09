@@ -36,11 +36,11 @@
                 <div className="editor_wrapper">
                     <h2 className="editor_title">Intro First</h2>
                     <div className="editor_item">
-                        <label className="editor_label">title</label>
+                        <label className="editor_label">Title</label>
                         <RichText
                             value={ attributes.title }
                             onChange={ (value) => handleSingleChange(value, 'title') }
-                        /><label className="editor_label">caption</label>
+                        /><label className="editor_label">Caption</label>
                         <RichText
                             value={ attributes.caption }
                             onChange={ (value) => handleSingleChange(value, 'caption') }

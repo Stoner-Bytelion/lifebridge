@@ -73,7 +73,7 @@
                 <div className="editor_wrapper">
                     <h2 className="editor_title">Quotes</h2>
                     <div className="editor_item">
-                        <label className="editor_label">title</label>
+                        <label className="editor_label">Title</label>
                         <RichText
                             value={ attributes.title }
                             onChange={ (value) => handleSingleChange(value, 'title') }
@@ -87,12 +87,12 @@
                                 } }
                             />
                         </MediaUploadCheck>
-                        <label className="editor_label">leftQuote</label>
+                        <label className="editor_label">Left Quote</label>
                         <RichText
                             value={ attributes.leftQuote }
                             onChange={ (value) => handleSingleChange(value, 'leftQuote') }
                         />
-                        <label className="editor_label">leftAuthor</label>
+                        <label className="editor_label">Left Author</label>
                         <RichText
                             value={ attributes.leftAuthor }
                             onChange={ (value) => handleSingleChange(value, 'leftAuthor') }
@@ -106,12 +106,12 @@
                                 } }
                             />
                         </MediaUploadCheck>
-                        <label className="editor_label">rightQuote</label>
+                        <label className="editor_label">Right Quote</label>
                         <RichText
                             value={ attributes.rightQuote }
                             onChange={ (value) => handleSingleChange(value, 'rightQuote') }
                         />
-                        <label className="editor_label">rightAuthor</label>
+                        <label className="editor_label">Right Author</label>
                         <RichText
                             value={ attributes.rightAuthor }
                             onChange={ (value) => handleSingleChange(value, 'rightAuthor') }

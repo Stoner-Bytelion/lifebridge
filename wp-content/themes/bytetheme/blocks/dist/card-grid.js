@@ -92,14 +92,14 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
             }
           })), React.createElement("label", {
             className: "editor_label"
-          }, "title"), React.createElement(RichText, {
+          }, "Title"), React.createElement(RichText, {
             value: item.title,
             onChange: function onChange(value) {
               return handleItemChange(index, value, 'title');
             }
           }), React.createElement("label", {
             className: "editor_label"
-          }, "caption"), React.createElement(RichText, {
+          }, "Caption"), React.createElement(RichText, {
             value: item.caption,
             onChange: function onChange(value) {
               return handleItemChange(index, value, "caption");
@@ -120,7 +120,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         className: "editor_title"
       }, "Card Grid"), React.createElement("label", {
         className: "editor_label"
-      }, "title"), React.createElement(RichText, {
+      }, "Title"), React.createElement(RichText, {
         value: attributes.title,
         onChange: function onChange(value) {
           return handleSingleChange(value, 'title');

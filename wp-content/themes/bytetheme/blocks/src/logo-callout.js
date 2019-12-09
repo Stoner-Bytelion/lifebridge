@@ -73,7 +73,7 @@
                                 } }
                             />
                         </MediaUploadCheck>
-                        <label className="editor_label">carefirstCaption</label>
+                        <label className="editor_label">Carefirst Caption</label>
                         <RichText
                             value={ attributes.carefirstCaption }
                             onChange={ (value) => handleSingleChange(value, 'carefirstCaption') }
@@ -86,7 +86,7 @@
                                 } }
                             />
                         </MediaUploadCheck>
-                        <label className="editor_label">lifebridgeCaption</label>
+                        <label className="editor_label">Lifebridge Caption</label>
                         <RichText
                             value={ attributes.lifebridgeCaption }
                             onChange={ (value) => handleSingleChange(value, 'lifebridgeCaption') }

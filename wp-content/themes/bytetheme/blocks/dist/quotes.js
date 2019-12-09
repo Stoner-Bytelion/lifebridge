@@ -97,7 +97,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         className: "editor_item"
       }, React.createElement("label", {
         className: "editor_label"
-      }, "title"), React.createElement(RichText, {
+      }, "Title"), React.createElement(RichText, {
         value: attributes.title,
         onChange: function onChange(value) {
           return handleSingleChange(value, 'title');
@@ -116,14 +116,14 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         }
       })), React.createElement("label", {
         className: "editor_label"
-      }, "leftQuote"), React.createElement(RichText, {
+      }, "Left Quote"), React.createElement(RichText, {
         value: attributes.leftQuote,
         onChange: function onChange(value) {
           return handleSingleChange(value, 'leftQuote');
         }
       }), React.createElement("label", {
         className: "editor_label"
-      }, "leftAuthor"), React.createElement(RichText, {
+      }, "Left Author"), React.createElement(RichText, {
         value: attributes.leftAuthor,
         onChange: function onChange(value) {
           return handleSingleChange(value, 'leftAuthor');
@@ -142,14 +142,14 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         }
       })), React.createElement("label", {
         className: "editor_label"
-      }, "rightQuote"), React.createElement(RichText, {
+      }, "Right Quote"), React.createElement(RichText, {
         value: attributes.rightQuote,
         onChange: function onChange(value) {
           return handleSingleChange(value, 'rightQuote');
         }
       }), React.createElement("label", {
         className: "editor_label"
-      }, "rightAuthor"), React.createElement(RichText, {
+      }, "Right Author"), React.createElement(RichText, {
         value: attributes.rightAuthor,
         onChange: function onChange(value) {
           return handleSingleChange(value, 'rightAuthor');

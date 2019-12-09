@@ -100,7 +100,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         }
       })), React.createElement("label", {
         className: "editor_label"
-      }, "carefirstCaption"), React.createElement(RichText, {
+      }, "Carefirst Caption"), React.createElement(RichText, {
         value: attributes.carefirstCaption,
         onChange: function onChange(value) {
           return handleSingleChange(value, 'carefirstCaption');
@@ -119,7 +119,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         }
       })), React.createElement("label", {
         className: "editor_label"
-      }, "lifebridgeCaption"), React.createElement(RichText, {
+      }, "Lifebridge Caption"), React.createElement(RichText, {
         value: attributes.lifebridgeCaption,
         onChange: function onChange(value) {
           return handleSingleChange(value, 'lifebridgeCaption');

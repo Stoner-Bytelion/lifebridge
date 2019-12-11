@@ -1,4 +1,6 @@
-.facts_callout {}
+.facts_callout {
+    overflow: hidden;
+}
 
 .facts_callout_inner {
     position: relative;
@@ -17,6 +19,16 @@
 
     @media #{$min_md} {
         width: 75%;
+        
+        padding-right: 20px;
+    }
+
+    @media #{$min_md} {
+        padding-right: 100px;
+    }
+
+    @media #{$min_xl} {
+        padding-right: 180px;
     }
 }
 
@@ -107,6 +119,8 @@
 }
 
 .facts {
+    width: 100%;
+
     position: relative;
     z-index: 4;
 
@@ -117,7 +131,7 @@
 }
 
 .fact {
-    color: $green;
+    color: $mint;
     font-family: 'Muli', sans-serif;
     font-weight: 600;
     padding: 20px 0;

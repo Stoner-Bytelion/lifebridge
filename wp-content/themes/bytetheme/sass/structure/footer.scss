@@ -8,12 +8,17 @@
 	@include row($mq_min_xxl);
 }
 
-.page_footer_group {
-
-	&:first-child {
-		margin-bottom: 10px;
+.page_footer_details {
+	margin-bottom: 20px;
+	
+	@media #{$min_sm} {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
 	}
 }
+
+.page_footer_group {}
 
 .credit {
 	font-family: 'Open Sans', sans-serif;

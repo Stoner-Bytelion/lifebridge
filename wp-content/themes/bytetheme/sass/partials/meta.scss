@@ -1,42 +1,37 @@
 .meta {
-	margin-bottom: 10px;
+	font-size: 16px;
+	line-height: (22 / 16);
 }
 
-.meta_details {}
+.meta_title {
+	font: inherit;
+	font-weight: 700;
+	line-height: inherit;
+	margin: 0;
+}
 
-.meta_detail {
+.meta_details {
 	display: flex;
-
-	&:not(:last-child) {
-		margin-bottom: 6px;
-	}
 }
 
-.meta_detail_icon {
-	margin-right: 6px;
+.meta_details_group {
+	margin-right: 30px;
 }
 
 .meta_detail_label {
-
-	&:after {
-
-		@media print {
-			content: normal;
-			display: none;
-		}
-	}
-}
-
-.meta_detail_label_hint {
-	@include visually_hide;
-}
-
-.meta_detail_link {
 	color: inherit;
-	display: inline-block;
-	text-decoration: underline;
-	transition: color .25s;
-
-	&:hover,
-	&:focus {}
+	display: block;
+	text-decoration: none;
 }
+
+.meta_address_street {
+	display: block;
+}
+
+.meta_address_group {}
+
+.meta_address_city {}
+
+.meta_address_state {}
+
+.meta_address_zip {}

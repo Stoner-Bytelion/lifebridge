@@ -3,27 +3,19 @@
                     <div class="page_footer_details">
                         <div class="page_footer_group">
                             <div class="meta">
+                                <h2 class="meta_title">Contact Us</h2>
                                 <div class="meta_details">
-                                    <h2 class="meta_details_title">Contact Us</h2>
                                     <div class="meta_details_group">
-                                        <div class="meta_detail">
-                                            <a class="meta_detail_label meta_detail_link" href="mailto:<?=get_option("email")?>" itemprop="email"><?=get_option("email")?></pre></a>
-                                        </div>
-                                        <div class="meta_detail">
-                                            <a class="meta_detail_label meta_detail_link" href="tel:<?=get_option("phone")?>" itemprop="telephone"><?=get_option("phone")?></a>
-                                        </div>
+                                        <a class="meta_detail_label" href="tel:<?=get_option("phone")?>" itemprop="telephone"><?=get_option("phone")?></a>
+                                        <a class="meta_detail_label" href="mailto:<?=get_option("email")?>" itemprop="email"><?=get_option("email")?></pre></a>
                                     </div>
                                     <div class="meta_details_group">
-                                        <div class="meta_detail">
-                                            <div class="meta_detail_label meta_detail_link">
-                                                <span class="meta_address_street" itemprop="streetAddress"><?=get_option("street")?></span>,
-                                                <span class="meta_address_group">
-                                                    <span class="meta_address_city" itemprop="addressLocality"><?=get_option("city")?></span>,
-                                                    <span class="meta_address_state" itemprop="addressRegion"><?=get_option("state")?></span>
-                                                    <span class="meta_address_zip" itemprop="postalCode"><?=get_option("zip")?></span>
-                                                </span>
-                                            </div>
-                                        </div>
+                                        <span class="meta_address_street" itemprop="streetAddress"><?=get_option("street")?></span>
+                                        <span class="meta_address_group">
+                                            <span class="meta_address_city" itemprop="addressLocality"><?=get_option("city")?></span>,
+                                            <span class="meta_address_state" itemprop="addressRegion"><?=get_option("state")?></span>
+                                            <span class="meta_address_zip" itemprop="postalCode"><?=get_option("zip")?></span>
+                                        </span>
                                     </div>
                                 </div>
                             </div>

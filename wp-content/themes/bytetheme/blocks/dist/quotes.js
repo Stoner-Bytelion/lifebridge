@@ -145,11 +145,39 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         alt: attributes.leftImage.alt
       }), React.createElement("figcaption", {
         className: "quote_caption"
-      }, React.createElement("p", {
+      }, React.createElement("span", {
+        className: "quote_caption_mark"
+      }, React.createElement("svg", {
+        width: "88",
+        height: "98",
+        viewBox: "0 0 88 98",
+        fill: "",
+        xmlns: "http://www.w3.org/2000/svg"
+      }, React.createElement("path", {
+        d: "M0 48.912V97.824H39V48.912H13C13 30.932 24.664 16.304 39 16.304V0.00399835C17.494 -1.6506e-06 0 21.94 0 48.912Z",
+        fill: ""
+      }), React.createElement("path", {
+        d: "M49 48.912V97.824H88V48.912H62C62 30.932 73.664 16.304 88 16.304V0.00399835C66.494 -1.6506e-06 49 21.94 49 48.912Z",
+        fill: ""
+      }))), React.createElement("p", {
         className: "quote_text"
       }, attributes.leftQuote), React.createElement("span", {
         className: "quote_author"
-      }, attributes.leftAuthor)))), React.createElement("blockquote", {
+      }, attributes.leftAuthor), React.createElement("span", {
+        className: "quote_caption_mark"
+      }, React.createElement("svg", {
+        width: "88",
+        height: "98",
+        viewBox: "0 0 88 98",
+        fill: "",
+        xmlns: "http://www.w3.org/2000/svg"
+      }, React.createElement("path", {
+        d: "M88 48.9123V0.000585132H49.0002V48.9123H75.0001C75.0001 66.8922 63.3361 81.5202 49.0002 81.5202V97.8201C70.5061 97.8241 88 75.8842 88 48.9123Z",
+        fill: ""
+      }), React.createElement("path", {
+        d: "M39 48.9123V0.000585132H0.000195265V48.9123H26.0001C26.0001 66.8922 14.3361 81.5202 0.000195265 81.5202V97.8201C21.5061 97.8241 39 75.8842 39 48.9123Z",
+        fill: ""
+      })))))), React.createElement("blockquote", {
         className: "quote"
       }, React.createElement("figure", {
         className: "quote_figure"

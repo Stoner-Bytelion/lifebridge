@@ -20,6 +20,7 @@
 			'news',
 			'link-group',
 			'logo-callout',
+			'spotlight',
 			'three-pair',
 			'topic-row',
 			'quotes',

@@ -169,8 +169,10 @@
 						<div className="gallery_items">
 							{ items }
 						</div>
-						<div className="gallery_box_items">
-							{ boxes }
+						<div className="gallery_box">
+							<div className="gallery_box_items">
+								{ boxes }
+							</div>
 							<button className="gallery_box_close">Close</button>
 						</div>
 					</div>

@@ -8,8 +8,9 @@ textarea {
 
 	-webkit-appearance: none;
 	appearance: none;
+	background: none;
 	border: 0;
-	border-bottom: 1px solid #C9C9C9;
+	border-bottom: 1px solid $navy;
 	outline: 0;
 	padding: 10px 20px;
 	transition:
@@ -19,10 +20,11 @@ textarea {
 	&:hover,
 	&:focus {
 		border-bottom-color: transparent;
-		box-shadow: inset 0 -5px 0 0 $green;
+		box-shadow: inset 0 -5px 0 0 $navy;
 	}
 }
 
+button[type="submit"],
 input[type="submit"] {
 	appearance: none;
 	-webkit-appearance: none;
@@ -64,5 +66,64 @@ select {
 	&:focus {
 		border-bottom-color: transparent;
 		box-shadow: inset 0 -5px 0 0 $green;
+	}
+}
+
+.form_spotlight {
+	background: #B9D3DC !important;
+	margin-bottom: 0 !important;
+
+	form {
+		@include row($mq_min_md);
+		@include bubble(true);
+	}
+
+	.wpforms-title {
+		@include row($mq_min_md);
+		@include h2;
+		@include divider;
+
+		color: $blacky;
+		font-size: 30px !important;
+		margin: 0 auto !important;
+		text-align: center;
+
+		@media #{$min_lg} {
+        	font-size: 36px !important;
+		}
+
+		&:after {
+			margin: 10px auto 0;
+		}
+	}
+
+	.wpforms-description {
+		@include row($mq_min_md);
+		@include h4;
+		
+		font-size: 20px !important;
+		margin: 30px auto !important;
+		text-align: center;
+
+		@media #{$min_lg} {
+			font-size: 24px !important;
+			margin-top: 40px !important;
+			margin-bottom: 40px !important;
+		}
+	}
+
+	.wpforms-field {
+		margin-bottom: 20px;
+		padding: 0;
+	}
+
+	.wpforms-field-label {
+		margin-bottom: 5px;
+	}
+
+	.wpforms-field-sublabel {
+		@include body_text;
+
+		margin-top: 5px;
 	}
 }

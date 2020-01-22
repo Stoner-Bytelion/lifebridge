@@ -190,8 +190,10 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       })), React.createElement("div", {
         className: "gallery_items"
       }, items), React.createElement("div", {
+        className: "gallery_box"
+      }, React.createElement("div", {
         className: "gallery_box_items"
-      }, boxes, React.createElement("button", {
+      }, boxes), React.createElement("button", {
         className: "gallery_box_close"
       }, "Close"))));
     }
